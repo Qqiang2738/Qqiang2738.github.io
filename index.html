@@ -5,19 +5,19 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <meta name="color-scheme" content="light" />
   <meta name="theme-color" content="#f8f8f5" />
-  <meta name="qqiang-build" content="3.0.0-showcase" />
-  <meta name="description" content="光头Qqiang的作品、手记与实验。光头Qqiang 的个人网站。" />
+  <meta name="qqiang-build" content="3.5.0-curated-real-works" />
+  <meta name="description" content="光头Qqiang 的真实软件作品、操作演示与创作手记。" />
   <meta name="author" content="光头Qqiang" />
   <meta property="og:locale" content="zh_CN" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="光头Qqiang · 作品与手记" />
-  <meta property="og:description" content="作品、实验与创作手记。一个独立创造者的作品与创作手记，包含七件数字作品的操作演示与开源项目。" />
+  <meta property="og:description" content="从实际使用出发，看看光头Qqiang 开发的浏览器工具如何工作。" />
   <meta property="og:url" content="https://qqiang.com/" />
   <meta name="twitter:card" content="summary" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='9' fill='%23f8f8f5'/%3E%3Ccircle cx='30' cy='29' r='19' fill='none' stroke='%2320221f' stroke-width='4'/%3E%3Cpath d='M42 42l11 11' fill='none' stroke='%2320221f' stroke-width='4' stroke-linecap='square'/%3E%3C/svg%3E" />
   <title>光头Qqiang · 作品与手记</title>
   <style>
-/* 光头Qqiang · V2.9.0 — Seven works / Detail and launcher repairs */
+/* 光头Qqiang · V3.1 — FileDesk continuous product use demonstration */
 :root {
   --paper:#f8f8f5;
   --ink:#20221f;
@@ -621,6 +621,136 @@ a:focus-visible,button:focus-visible{outline:2px solid #617a62;outline-offset:5p
  .mini-ec-done{font-size:14px;margin-top:5px}.mini-shot-paper p,.mini-gf-page p{font-size:14px}
  .mini-chrome{font-size:13px}.mini-gf-tabs span{font-size:13px}.mini-gf-complete{font-size:13px}
 }
+/* V3.1 · FileDesk product-use film — matches the verified V1.0 workspace structure. */
+.fd31-app{width:min(calc(100% - 44px),1080px);height:min(94%,584px);overflow:hidden;background:#fbfcfa;border:1px solid #e1e6df;box-shadow:0 12px 38px #1e302010;position:relative;font:400 16px/1.6 var(--text);color:#20382b}
+.fd31-header{height:60px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #e6ebe6;padding:0 clamp(18px,3vw,29px)}
+.fd31-brand{display:flex;align-items:center;gap:8px;font-size:16px;font-weight:500}.fd31-logo{height:31px;width:31px;display:grid;place-items:center;background:#295a43;color:#fff;border-radius:9px;font-size:24px;font-weight:600;letter-spacing:-4px;padding-right:4px;line-height:1}.fd31-brand small{color:#62766b;font-size:14px;font-weight:500;margin-left:2px}.fd31-local{font-size:14px;color:#688072}.fd31-local::before{content:'';display:inline-block;width:6px;height:6px;background:#83af8b;border-radius:50%;vertical-align:middle;margin-right:8px}
+.fd31-space{position:relative;height:calc(100% - 60px);overflow:hidden}.fd31-view{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .36s ease,transform .5s ease;transform:translateY(9px);pointer-events:none}.fd31-view h2{font:400 27px/1.35 var(--text);margin:0;color:#233e2d;letter-spacing:-.02em}.fd31-view-upload{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;padding:24px}.fd31-dropzone{width:min(77%,740px);height:62%;border:1.5px dashed #d1ded2;border-radius:17px;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center}.fd31-dropicon{height:54px;width:49px;background:#f6faf6;border:1px solid #d5e3d6;box-shadow:-7px -5px 0 -1px #e8f1e9,7px -3px 0 -2px #e4efe6;border-radius:7px;color:#538568;display:grid;place-items:center;font-size:27px}.fd31-dropzone strong{font-weight:500;font-size:17px}.fd31-dropzone p{margin:0;color:#7b9682;font-size:15px}.fd31-drop-types{color:#6c8374;font-size:14px;letter-spacing:.01em;margin-top:18px}
+.fd31-dragged{position:absolute;z-index:7;left:17%;top:69%;display:flex;align-items:center;gap:10px;background:white;border:1px solid #d7e1d7;padding:12px 15px;border-radius:7px;box-shadow:0 12px 28px #2037241a;opacity:0;white-space:nowrap;font-size:14px;pointer-events:none}.fd31-fileicon{display:grid;place-items:center;background:#eef3f9;color:#5779a1;border-radius:7px;height:37px;width:37px;font-weight:600;font-size:17px;flex-shrink:0}.fd31-dragged .fd31-fileicon{height:31px;width:31px}
+.fd31-view-setup{padding:clamp(20px,3.6vw,44px) clamp(20px,3vw,46px)}.fd31-setup-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:25px}.fd31-secondary-btn{background:#e3f0e7;border:1px solid #c7ddcd;padding:9px 18px;border-radius:8px;color:#2d5840;font-size:14px}.fd31-layout{height:calc(100% - 69px);display:grid;grid-template-columns:1.25fr .9fr;gap:17px}.fd31-pane{background:#fff;border:1px solid #e2e9e1;border-radius:17px;padding:clamp(15px,2vw,25px);min-width:0;position:relative}.fd31-pane-head{font-size:17px;font-weight:500;display:flex;justify-content:space-between;align-items:center;margin-bottom:32px}.fd31-chip{background:#edf6ef;border-radius:99px;padding:1px 8px;font-size:13px;color:#51765c;margin-left:5px}.fd31-mini-link{font-size:14px;color:#63856c;font-weight:400}.fd31-loaded{display:flex;align-items:center;gap:11px;margin:0 2px;font-weight:500;font-size:15px}.fd31-loaded small{display:block;font-size:13px;color:#849488;font-weight:400;margin-top:3px}.fd31-choose{border:1px solid #e7ece7;padding:11px 12px;border-radius:9px;display:flex;gap:12px;align-items:center;margin-bottom:8px;transition:background .35s,border-color .35s,box-shadow .35s}.fd31-choose>span{height:31px;width:31px;background:#edf3ee;border-radius:7px;display:grid;place-items:center;color:#4b7758;flex-shrink:0;font-size:17px}.fd31-choose strong{font-size:14px;font-weight:500;display:block}.fd31-choose small{display:block;font-size:12px;color:#7a8d7d;line-height:1.35;margin-top:3px}.fd31-generate{position:absolute;bottom:20px;left:20px;right:20px;border-radius:8px;background:#2a5942;color:white;text-align:center;padding:10px 9px;font-size:15px;font-weight:500;transition:filter .25s,transform .25s,box-shadow .25s}
+.fd31-loading{position:absolute;inset:15% 8%;background:#fcfefbf0;border-radius:12px;border:1px solid #dce7dc;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:17px;opacity:0;visibility:hidden;z-index:5;transition:opacity .3s;font-size:17px}.fd31-spin{border:3px solid #dfede1;border-top-color:#406e4d;border-radius:50%;height:35px;width:35px;animation:fd31-spin 1.1s linear infinite}@keyframes fd31-spin{to{transform:rotate(360deg)}}.fd31-loading p{margin:0;color:#7c8d81;font-size:14px}
+.fd31-view-done{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:25px;gap:28px}.fd31-done-ribbon{width:min(80%,720px);border:1px solid #cae4d0;background:#f0f9f2;padding:15px 19px;border-radius:12px;display:flex;gap:13px;align-items:center;color:#356245}.fd31-check{height:33px;width:33px;display:grid;place-items:center;border-radius:50%;background:#d6eddb;flex-shrink:0;font-size:23px}.fd31-done-ribbon strong{font-size:16px;font-weight:500;display:block}.fd31-done-ribbon small{font-size:13px;color:#718978;display:block;margin-top:3px}.fd31-result-card{background:white;border:1px solid #e1e8e1;border-radius:12px;padding:23px 25px;display:flex;align-items:center;gap:16px;width:min(72%,580px)}.fd31-result-card strong{font-size:16px;font-weight:500}.fd31-result-card small{font-size:13px;color:#829286;display:block;margin-top:5px}.fd31-result-card .fd31-fileicon{background:#e5edf8;color:#4e6c94}.fd31-button{background:#285b42;color:white;border-radius:8px;padding:13px 35px;font-size:15px;font-weight:500;display:inline-flex;align-items:center;gap:10px}
+.fd31-view-preview{background:#e9ece8;display:flex;flex-direction:column}.fd31-doc-top{height:48px;background:#fff;border-bottom:1px solid #dce5dc;display:flex;justify-content:space-between;align-items:center;padding:0 22px;color:#405c48;font-size:14px;gap:15px}.fd31-wordfile{display:flex;gap:10px;align-items:center;min-width:0}.fd31-wordfile span:last-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.fd31-word-icon{background:#e7ecf6;color:#466793;border-radius:4px;height:27px;width:27px;display:grid;place-items:center;font-weight:600;flex-shrink:0}.fd31-doc-label{color:#7a8c7e}.fd31-paper{background:white;width:min(81%,760px);height:calc(100% - 67px);margin:12px auto 0;box-shadow:0 3px 20px #1f33201a;padding:clamp(18px,2vw,30px);overflow:hidden}.fd31-paper h3{text-align:center;font:400 24px/1.45 var(--display);margin:0 0 12px}.fd31-paper-meta{display:flex;justify-content:space-between;color:#7a8d7d;border-bottom:1px solid #e3e9e3;padding-bottom:10px;margin-bottom:17px;font-size:13px}.fd31-table{width:100%;border-collapse:collapse;font-size:13px;line-height:1.4;table-layout:fixed}.fd31-table td,.fd31-table th{border:1px solid #dae2da;text-align:left;padding:7px 8px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.fd31-table th{background:#f0f5f0;font-weight:500}.fd31-table th:nth-child(1){width:10%}.fd31-table th:nth-child(2){width:14%}.fd31-table th:nth-child(3){width:28%}.fd31-table th:nth-child(4){width:23%}.fd31-table th:nth-child(5){width:13%}.fd31-table th:nth-child(6){width:12%}
+.fd31-info-line{position:absolute;bottom:10px;left:0;right:0;text-align:center;font-size:14px;color:#617a68}
+/* The seven states live in the same browser window. Nothing is a separate slide. */
+.film-shell[data-film=filedesk] .fd31-view-upload{opacity:1;visibility:visible;transform:none}
+.film-shell[data-film=filedesk][data-phase="1"] .fd31-dragged{animation:fd31-drag 2.6s cubic-bezier(.25,.7,.2,1) forwards}
+@keyframes fd31-drag{0%{opacity:0;left:13%;top:72%;transform:scale(.96)}12%{opacity:1}75%{opacity:1;left:44%;top:48%;transform:scale(1)}100%{opacity:0;left:45%;top:48%;transform:scale(.96)}}
+.film-shell[data-film=filedesk][data-phase="2"] .fd31-view-upload,.film-shell[data-film=filedesk][data-phase="3"] .fd31-view-upload,.film-shell[data-film=filedesk][data-phase="4"] .fd31-view-upload,.film-shell[data-film=filedesk][data-phase="5"] .fd31-view-upload,.film-shell[data-film=filedesk][data-phase="6"] .fd31-view-upload{opacity:0;visibility:hidden}
+.film-shell[data-film=filedesk][data-phase="2"] .fd31-view-setup,.film-shell[data-film=filedesk][data-phase="3"] .fd31-view-setup,.film-shell[data-film=filedesk][data-phase="4"] .fd31-view-setup{opacity:1;visibility:visible;transform:none}
+.film-shell[data-film=filedesk][data-phase="3"] .fd31-option-word,.film-shell[data-film=filedesk][data-phase="4"] .fd31-option-word{background:#edf7ee;border-color:#b7d9c0;box-shadow:0 0 0 1px #badbc0}.film-shell[data-film=filedesk][data-phase="4"] .fd31-generate{filter:brightness(.9);transform:scale(.98)}
+.film-shell[data-film=filedesk][data-phase="4"] .fd31-loading{opacity:1;visibility:visible}
+.film-shell[data-film=filedesk][data-phase="5"] .fd31-view-done{opacity:1;visibility:visible;transform:none}
+.film-shell[data-film=filedesk][data-phase="6"] .fd31-view-preview{opacity:1;visibility:visible;transform:none}
+.fd31-view-done{justify-content:flex-start;padding-top:25px;gap:25px}.fd31-view-done .fd31-done-ribbon{width:min(81%,720px)}.fd31-view-done .fd31-button{margin-left:auto;flex-shrink:0;padding:10px 17px;font-size:13px}.fd31-view-done h2{font-size:27px}.fd31-done-drop{background:white;border:1px dashed #c9dfcc;border-radius:15px;width:min(81%,720px);height:56%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;color:#355a44}.fd31-done-drop strong{font-weight:500;font-size:16px}.fd31-done-drop span{color:#7d9581;font-size:14px}.fd31-done-drop small{font-size:13px;color:#6b8471;margin-top:12px}
+@media(max-width:750px){.fd31-view-done{gap:16px;padding-top:18px}.fd31-view-done .fd31-done-ribbon{width:100%;padding:12px 9px;gap:8px}.fd31-view-done .fd31-done-ribbon strong{font-size:12px}.fd31-view-done .fd31-done-ribbon small{font-size:10px}.fd31-view-done .fd31-button{font-size:11px;padding:8px}.fd31-view-done .fd31-check{height:26px;width:26px;font-size:17px}.fd31-view-done h2{font-size:23px}.fd31-done-drop{width:100%;height:54%;padding:12px}.fd31-done-drop small{font-size:11px;text-align:center}.fd31-done-drop strong{font-size:14px}}
+
+/* The illustrated cursor is always placed on a genuine UI target, adjusted for viewport. */
+.film-shell[data-film=filedesk] .film-cursor{transition:left 1.1s cubic-bezier(.25,.8,.3,1),top 1.1s cubic-bezier(.25,.8,.3,1);filter:drop-shadow(0 2px 2px #fff)}
+@media(max-width:750px){
+ .film-shell[data-film=filedesk] .film-stage{height:525px}
+ .fd31-app{height:calc(100% - 10px);width:calc(100% - 12px);font-size:14px}.fd31-header{height:48px;padding:0 12px}.fd31-space{height:calc(100% - 48px)}.fd31-brand{font-size:14px;gap:6px}.fd31-brand small{font-size:12px}.fd31-logo{height:27px;width:27px;font-size:20px}.fd31-local{font-size:11px}.fd31-view h2{font-size:23px}
+ .fd31-view-upload{gap:26px;padding:18px}.fd31-dropzone{width:97%;height:64%;padding:14px;gap:9px}.fd31-dropzone strong{font-size:15px}.fd31-dropzone p,.fd31-drop-types{font-size:13px}.fd31-drop-types{margin-top:12px;line-height:1.8}.fd31-dragged{font-size:12px;padding:8px}
+ .fd31-view-setup{padding:21px 12px}.fd31-setup-head{margin-bottom:16px}.fd31-secondary-btn{font-size:12px;padding:7px 9px}.fd31-layout{grid-template-columns:1fr;grid-template-rows:93px minmax(0,1fr);height:calc(100% - 55px);gap:9px}.fd31-pane{padding:12px;border-radius:10px}.fd31-pane-head{margin-bottom:5px;font-size:14px}.fd31-mini-link{font-size:12px}.fd31-pane-files .fd31-loaded{margin-top:5px}.fd31-loaded{font-size:13px}.fd31-loaded small{font-size:11px}.fd31-fileicon{width:29px;height:30px;font-size:14px}.fd31-pane-actions .fd31-pane-head{margin-bottom:9px}.fd31-choose{margin-bottom:6px;padding:7px 8px;gap:9px}.fd31-choose>span{height:25px;width:25px;font-size:14px}.fd31-choose strong{font-size:13px}.fd31-choose small{font-size:11px;margin-top:0}.fd31-generate{left:12px;right:12px;bottom:10px;padding:9px;font-size:13px}.fd31-loading{inset:20% 5%;font-size:14px}
+ .fd31-view-done{padding:15px;gap:17px}.fd31-done-ribbon{width:100%;padding:12px;gap:8px}.fd31-done-ribbon strong{font-size:14px}.fd31-done-ribbon small{font-size:11px}.fd31-result-card{width:100%;padding:14px;gap:8px}.fd31-result-card strong{font-size:13px;overflow-wrap:anywhere}.fd31-result-card small{font-size:12px}.fd31-button{padding:10px 20px;font-size:14px}
+ .fd31-doc-top{height:45px;padding:0 9px;font-size:12px}.fd31-doc-label{display:none}.fd31-paper{width:96%;height:calc(100% - 58px);padding:20px 12px;margin-top:9px}.fd31-paper h3{font-size:21px}.fd31-paper-meta{font-size:11px;margin-bottom:11px}.fd31-table{font-size:11px}.fd31-table td,.fd31-table th{padding:8px 5px}.fd31-table th:nth-child(1),.fd31-table td:nth-child(1),.fd31-table th:nth-child(6),.fd31-table td:nth-child(6){display:none}.fd31-table th:nth-child(2){width:22%}.fd31-table th:nth-child(3){width:30%}.fd31-table th:nth-child(4){width:30%}.fd31-table th:nth-child(5){width:18%}
+ .fd31-info-line{font-size:12px;bottom:5px}
+}
+@media(prefers-reduced-motion:reduce){.fd31-app *{animation:none!important;transition:none!important}}
+
+
+/* V3.2 — Two genuine product-use films: YEBO garden / PageShot stable editor.
+   Desktop uses source-verified product screenshots. Mobile preserves readable action framing. */
+.yb32-stage,.ps32-stage{width:100%;height:100%;min-width:0;display:grid;place-items:center;grid-template-rows:minmax(0,1fr);grid-template-columns:minmax(0,1fr);overflow:hidden;background:#f8f8f6}
+.yb32-desktop,.ps32-desktop{width:min(calc(100% - 46px),1010px);height:calc(100% - 26px);max-height:calc(100% - 26px);min-height:0;min-width:0;display:grid;place-items:center;grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr)}
+.yb32-shot,.ps32-shot{width:min(100%,920px);position:relative;line-height:0;overflow:hidden;box-shadow:0 15px 45px #1c271b0b;border:1px solid #e8e8e4;background:#f7f7f4}
+.yb32-shot{aspect-ratio:1205 / 888;height:100%;max-height:100%;width:auto;max-width:100%}.ps32-shot{aspect-ratio:1480 / 900;height:100%;max-height:100%;width:auto;max-width:100%}
+.yb32-shot>img,.ps32-shot>img{display:block;width:100%;height:100%;object-fit:fill}
+.v32-hotspot{position:absolute;width:6px;height:6px;transform:translate(-50%,-50%);pointer-events:none}
+.yb32-ring{position:absolute;left:50.5%;top:47.2%;width:5%;aspect-ratio:1;border:1.5px solid #4d7561;box-shadow:0 0 0 8px #73978119;border-radius:50%;opacity:0;transform:translate(-50%,-50%) scale(.74);transition:opacity .45s ease,transform .7s ease;pointer-events:none}
+.film-shell[data-film=yebo][data-phase="1"] .yb32-ring,.film-shell[data-film=yebo][data-phase="2"] .yb32-ring,.film-shell[data-film=yebo][data-phase="3"] .yb32-ring{opacity:1;transform:translate(-50%,-50%) scale(1)}
+.yb32-menu{position:absolute;left:54%;top:37%;background:#fffefa;border:1px solid #e4e5df;box-shadow:0 12px 27px #29312317;border-radius:9px;padding:1.1% 1.5%;width:23%;min-height:5%;display:flex;justify-content:space-between;align-items:center;gap:7px;color:#46514a;font:500 clamp(12px,1.1vw,17px)/1.5 var(--text);white-space:nowrap;opacity:0;transform:translateY(10px) scale(.97);transition:opacity .4s,transform .5s;pointer-events:none}
+.film-shell[data-film=yebo][data-phase="2"] .yb32-menu,.film-shell[data-film=yebo][data-phase="3"] .yb32-menu{opacity:1;transform:none}
+.film-shell[data-film=yebo][data-phase="3"] .yb32-menu{background:#e8eee7;border-color:#acc2b2}
+.yb32-mask{position:absolute;left:50.5%;top:47.2%;width:3.7%;height:5%;background:#f8f8f5;border-radius:50%;transform:translate(-50%,-50%);opacity:0;transition:opacity .17s;pointer-events:none}
+.yb32-flying{position:absolute;left:50.5%;top:47.2%;width:3.4%;aspect-ratio:1;border-radius:50%;background:#242629;display:grid;place-items:center;color:white;font:600 clamp(10px,1.1vw,17px)/1 var(--text);transform:translate(-50%,-50%) scale(.8);opacity:0;transition:left 1.55s cubic-bezier(.24,.76,.26,1),top 1.55s cubic-bezier(.24,.76,.26,1),opacity .27s,transform 1.5s;pointer-events:none}
+.film-shell[data-film=yebo][data-phase="4"] .yb32-mask,.film-shell[data-film=yebo][data-phase="5"] .yb32-mask{opacity:1}
+.film-shell[data-film=yebo][data-phase="4"] .yb32-flying{opacity:.88;left:19%;top:87%;transform:translate(-50%,-50%) scale(.7)}
+.yb32-newrow{position:absolute;left:10%;top:89.5%;width:25%;padding:.7% 1.1%;border-bottom:1px solid #dce2dc;background:#f8f8f5;display:flex;align-items:center;gap:10px;opacity:0;transform:translateY(12px);transition:opacity .52s ease,transform .52s ease;pointer-events:none;color:#5b625b;font:400 clamp(11px,1.0vw,16px)/1.4 var(--text)}
+.yb32-newrow b{width:22px;height:22px;background:#e8e8e2;color:#31372f;display:grid;place-items:center;border-radius:5px}.yb32-newrow small{display:block;font-size:.78em;color:#929c91;margin-top:2px}
+.film-shell[data-film=yebo][data-phase="5"] .yb32-newrow{opacity:1;transform:none}
+.ps32-overlay{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+.ps32-circle{fill:none;stroke:#e26b5c;stroke-width:7;stroke-linecap:round;stroke-dasharray:420;stroke-dashoffset:420;transition:stroke-dashoffset 1.65s cubic-bezier(.2,.7,.2,1)}
+.ps32-arrow{fill:none;stroke:#e26b5c;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:530;stroke-dashoffset:530;transition:stroke-dashoffset 1.65s cubic-bezier(.2,.7,.2,1)}
+.film-shell[data-film=pageshot][data-phase="2"] .ps32-circle,.film-shell[data-film=pageshot][data-phase="3"] .ps32-circle,.film-shell[data-film=pageshot][data-phase="4"] .ps32-circle,.film-shell[data-film=pageshot][data-phase="5"] .ps32-circle{stroke-dashoffset:0}
+.film-shell[data-film=pageshot][data-phase="4"] .ps32-arrow,.film-shell[data-film=pageshot][data-phase="5"] .ps32-arrow{stroke-dashoffset:0}
+.ps32-toast{position:absolute;top:12%;right:2.5%;background:#fffefa;color:#23543a;border:1px solid #c5ddce;border-radius:8px;box-shadow:0 10px 30px #1b281b20;padding:12px 16px;font:500 14px/1.4 var(--text);opacity:0;transform:translateY(-8px);transition:opacity .45s,transform .45s;pointer-events:none}
+.film-shell[data-film=pageshot][data-phase="5"] .ps32-toast{opacity:1;transform:none}
+.yb32-mobile,.ps32-mobile{display:none}
+.film-shell[data-film=yebo] .film-cursor,.film-shell[data-film=pageshot] .film-cursor{transition:left 1.2s cubic-bezier(.22,.8,.28,1),top 1.2s cubic-bezier(.22,.8,.28,1),opacity .35s}
+@media(max-width:750px){
+ .film-shell[data-film=yebo] .film-stage,.film-shell[data-film=pageshot] .film-stage{height:495px}
+ .yb32-desktop,.ps32-desktop{display:none}
+ .yb32-mobile,.ps32-mobile{display:block;width:calc(100% - 14px);height:calc(100% - 16px);background:#f8f8f5;position:relative;overflow:hidden;border:1px solid #e7e9e3;color:#353f36}
+ .yb32-mobile{padding:23px 17px}.yb32-m-head{font:400 28px/1.5 var(--display);text-align:center;margin:3px 0 15px}.yb32-m-search{margin:0 auto 18px;padding:9px 15px;background:white;border:1px solid #e3e7df;border-radius:30px;color:#9aa69c;font:400 13px/1.5 var(--text);display:flex;justify-content:space-between}.yb32-m-search span{font-size:18px}
+ .yb32-m-section{color:#687369;font:400 15px/1.6 var(--text);margin-bottom:5px}.yb32-m-plants{display:grid;grid-template-columns:repeat(3,1fr);align-items:end;gap:11px;height:155px}.yb32-m-plant{display:flex;flex-direction:column;align-items:center;position:relative;justify-content:end;gap:0;height:100%;min-width:0}.yb32-m-flower{border:1px solid #e4e7e2;background:#fff;width:32px;height:32px;border-radius:50%;box-shadow:0 2px 9px #102b1510;display:grid;place-items:center;font-size:15px;position:relative;z-index:1;transition:transform .8s ease,opacity .5s}.yb32-m-plant.xb .yb32-m-flower{font-weight:600;background:#1d2023;color:white}
+ .yb32-m-stem{display:block;width:2px;height:58px;background:#93ac98;transform:rotate(-9deg);margin-top:0;position:relative;font-size:0;flex-shrink:0}.yb32-m-stem::before,.yb32-m-stem::after{content:"";position:absolute;left:-21px;top:28px;width:20px;height:9px;background:#9eb8a5;border-radius:95% 0 95% 0;transform:rotate(25deg)}.yb32-m-stem::after{left:2px;top:37px;transform:scaleX(-1) rotate(20deg)}.yb32-m-pot{background:linear-gradient(100deg,#c3bba8,#e5dbcc);border-top:8px solid #c4bbab;clip-path:polygon(0 0,100% 0,86% 100%,14% 100%);width:86%;height:41px;text-align:center;padding-top:4px;font-size:13px;color:#697267}
+ .yb32-m-save{position:absolute;top:43%;left:32%;z-index:3;background:white;border:1px solid #b6c8b7;border-radius:10px;padding:8px 12px;font:500 13px/1.5 var(--text);box-shadow:0 6px 19px #10221017;display:flex;gap:14px;opacity:0;transform:translateY(8px);transition:opacity .36s,transform .36s}.film-shell[data-film=yebo][data-phase="2"] .yb32-m-save,.film-shell[data-film=yebo][data-phase="3"] .yb32-m-save{opacity:1;transform:none}
+ .film-shell[data-film=yebo][data-phase="3"] .yb32-m-save{background:#edf4ec}.film-shell[data-film=yebo][data-phase="4"] .yb32-m-plant.xb .yb32-m-flower,.film-shell[data-film=yebo][data-phase="5"] .yb32-m-plant.xb .yb32-m-flower{opacity:0;transform:translate(-125px,126px) scale(.7)}
+ .yb32-m-later{border-top:1px solid #e5e9e4;margin-top:20px;padding-top:14px}.yb32-m-later strong{display:block;font:500 15px/1.5 var(--text);margin-bottom:6px}.yb32-m-reading{padding:7px 4px;font:400 14px/1.5 var(--text);color:#667166}.yb32-m-added{border-top:1px solid #e5e9e4;display:flex;align-items:center;gap:10px;padding:8px 4px;font:400 14px/1.5 var(--text);opacity:0;transform:translateY(12px);transition:opacity .5s,transform .5s}.yb32-m-added span{display:grid;place-items:center;background:#262727;color:white;width:23px;height:23px;border-radius:5px;font-size:12px}.film-shell[data-film=yebo][data-phase="5"] .yb32-m-added{opacity:1;transform:none}
+ .ps32-mobile{background:#f2f5f4}.ps32-m-head{display:flex;align-items:center;justify-content:space-between;gap:8px;background:white;height:48px;padding:0 12px;border-bottom:1px solid #dfe5e0}.ps32-m-head strong{font:600 14px/1.4 var(--text)}.ps32-m-head small{font-size:12px;color:#8b9990;font-weight:400}.ps32-m-save{border-radius:6px;background:#2d5347;color:#fff;font:500 12px/1.4 var(--text);padding:8px 10px}
+ .ps32-m-content{height:calc(100% - 48px);display:grid;grid-template-columns:43px minmax(0,1fr)}.ps32-m-content aside{display:flex;flex-direction:column;align-items:center;gap:16px;padding-top:20px;background:white;border-right:1px solid #dce3de}.ps32-m-tool{width:31px;height:31px;display:grid;place-items:center;color:#73877a;font-size:20px;border-radius:6px}.film-shell[data-film=pageshot][data-phase="1"] .ps32-m-tool:first-child,.film-shell[data-film=pageshot][data-phase="2"] .ps32-m-tool:first-child{background:#dbe9df;color:#295b43}.film-shell[data-film=pageshot][data-phase="3"] .ps32-m-tool:nth-child(2),.film-shell[data-film=pageshot][data-phase="4"] .ps32-m-tool:nth-child(2){background:#dbe9df;color:#295b43}
+ .ps32-m-canvas{position:relative;overflow:hidden;padding:15px 8px;background:#e6eae8}.ps32-m-document{height:100%;background:#fff;border:1px solid #e0e6df;padding:23px 16px;box-shadow:0 4px 14px #33453310}.ps32-m-dash{display:grid;grid-template-columns:1fr 1fr;gap:7px}.ps32-m-dash>div{border:1px solid #e5eae7;padding:10px 8px;min-width:0}.ps32-m-dash small{font-size:11px;display:block;white-space:nowrap;overflow:hidden;color:#87968d;text-overflow:ellipsis}.ps32-m-dash strong{display:block;font:600 29px/1.45 var(--text);color:#2b7a66}.ps32-m-dash>div:last-child strong{color:#bd7c53}.ps32-m-subtitle{font:600 20px/1.3 var(--text);color:#38594b;margin:28px 0 20px}.ps32-m-line{height:30px;border:1px solid #e6eae6;margin:0 0 11px;background:linear-gradient(90deg,#e9f2ee 0 16%,transparent 16%)}.ps32-m-line.short{width:92%}
+ .ps32-m-overlay{position:absolute;top:6px;left:8px;width:calc(100% - 16px);height:330px;pointer-events:none}.ps32-m-overlay .ps32-circle{stroke-width:4}.ps32-m-overlay .ps32-arrow{stroke-width:4}.ps32-m-toast{position:absolute;right:9px;top:65px;background:white;border:1px solid #d2dfd6;border-radius:7px;padding:11px 12px;color:#285a3e;font:500 13px/1.5 var(--text);opacity:0;transform:translateY(-8px);transition:.5s}.film-shell[data-film=pageshot][data-phase="5"] .ps32-m-toast{opacity:1;transform:none}
+}
+@media(prefers-reduced-motion:reduce){.yb32-stage *,.ps32-stage *{transition:none!important;animation:none!important}.ps32-circle,.ps32-arrow{stroke-dashoffset:0}}
+
+
+/* V3.3 – actual PageShot screen recording, no reenacted mouse or UI */
+.ps33-shell{border:1px solid var(--line);background:#f2f3ef;overflow:hidden}
+.ps33-video{display:block;width:100%;height:auto;aspect-ratio:1280 / 840;object-fit:contain;background:#f2f3ef}
+.ps33-bottom{display:flex;justify-content:flex-end;padding:17px 0 0}
+.ps33-replay{background:none;border:0;border-bottom:1px solid var(--ink);color:var(--ink);font:400 var(--type-ui)/1.6 var(--text);padding:4px 0;cursor:pointer}
+.ps33-replay:focus-visible{outline:2px solid #617a62;outline-offset:5px}
+@media(max-width:750px){.ps33-bottom{padding-top:13px}.ps33-video{aspect-ratio:1280 / 840}}
+
+/* V3.5 — curatorial layout, one true-use video per work; all sizes from design tokens */
+.works-intro{font-family:var(--text);font-size:var(--type-reading);line-height:var(--type-reading-leading);color:var(--secondary);max-width:700px;margin:0 0 54px}
+.works-film-list{border-top:1px solid var(--line);margin-bottom:100px}
+.works-film-row{display:grid;grid-template-columns:minmax(210px,36%) minmax(0,1fr) 24px;align-items:center;gap:6%;padding:34px 0;min-height:225px}
+.works-film-row .works-preview{display:block;aspect-ratio:1.54;background:#eef0eb;overflow:hidden;min-width:0}
+.works-film-row .works-preview img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+.works-film-row:hover .works-preview img{transform:scale(1.025)}
+.works-description{display:flex;flex-direction:column;gap:11px;min-width:0}
+.works-description .wcn{font:400 var(--type-subhead)/1.45 var(--display);color:var(--ink)}
+.work-en-inline{font:400 var(--type-ui)/1.4 var(--text);color:var(--muted);margin-left:10px}
+.works-description .wcopy{font:400 var(--type-body)/1.85 var(--text);color:var(--secondary);max-width:550px}
+.works-description .wcategory{font-size:var(--type-ui);color:var(--muted)}
+.case-story{display:none}
+.case-next{margin-top:75px}
+.case-head .case-lead{max-width:530px}
+.about-refined{grid-template-columns:minmax(230px,.7fr) minmax(0,1.3fr);gap:11%;align-items:start}
+.about-side{display:flex;flex-direction:column;gap:42px;align-items:start}
+.about-avatar-frame{width:min(100%,310px);aspect-ratio:1/1;background:#eef1eb;display:grid;place-items:center;overflow:hidden}
+.about-avatar-illustration{width:88%;height:88%;display:block}
+.about-refined .about-big{font-size:var(--type-section);line-height:1.55}
+.about-refined .about-body{padding-top:6px}
+.about-links{display:flex;flex-wrap:wrap;gap:35px;margin-top:36px}
+@media(max-width:750px){
+  .works-intro{margin-bottom:28px;font-size:var(--type-reading)}
+  .works-film-row{grid-template-columns:minmax(0,1fr) 22px;gap:14px;padding:28px 0;min-height:0}
+  .works-film-row .works-preview{grid-column:1/-1;width:100%;aspect-ratio:1.54}
+  .works-description{gap:9px}
+  .works-description .wcn{font-size:var(--type-lead)}
+  .work-en-inline{font-size:var(--type-ui)}
+  .works-description .wcopy{font-size:var(--type-body)}
+  .about-refined{grid-template-columns:1fr;gap:35px;padding-top:50px}
+  .about-side{flex-direction:row;align-items:center;gap:22px}
+  .about-avatar-frame{width:clamp(128px,32vw,190px);flex:none}
+  .about-refined .about-big{font-size:var(--type-subhead)}
+  .about-links{gap:24px}
+}
+@media(prefers-reduced-motion:reduce){.works-film-row .works-preview img{transition:none}}
 </style>
 </head>
 <body>
@@ -658,13 +788,11 @@ a:focus-visible,button:focus-visible{outline:2px solid #617a62;outline-offset:5p
       ]
     };
     const projects = [
-      {slug:'pond',name:'一池清宁',en:'Living Pond',type:'数字体验 · macOS',year:'2026',number:'01',desc:'一方安静的桌面水域。让工作和生活之间，多一个可以短暂停靠的地方。',lead:'一款运行在 macOS 桌面上的小鱼塘。鱼群在水里游动，轻点水面会有涟漪；工作间隙无需完成任务，也能在屏幕上留一小片安静。',story:['屏幕占据了我们大部分清醒时间。它通常承载任务、提醒和不断出现的下一步。于是我想，能不能让桌面上出现一种没有目标的体验：一池水，一群鱼，偶尔落下的细雨。','我更关注它是否让人愿意放慢一点，而不是给它增加多少功能。那些游动、靠近和散开的时刻，应该是自然的，不是提醒用户继续操作的机制。'],quote:'不是每一件作品，都需要让人更高效。',points:[['不过度设计','没有持续夸张的水面特效，只保留恰到好处的细雨与涟漪。'],['群体的生命感','鱼的大小与带领关系让水域拥有自然的节奏，而不是整齐的程序轨迹。'],['陪伴而非干扰','它可以存在于工作之外，也可以安静地陪伴工作。']],visual:'pond',status:'持续打磨'},
-      {slug:'yebo',name:'页泊',en:'YEBO',type:'浏览器 · Chrome 扩展',year:'2026',number:'02',desc:'重新组织每一次打开的页面，让浏览器回到安静、有序的状态。',lead:'一款 Chrome 新标签页扩展。把常用书签、正在打开的标签和稍后阅读集中在一个地方，也能用花园模式整理页面，让浏览不再越开越乱。',story:['打开一个网页很容易，但放下它并不容易。标签越积越多，稍后阅读越来越长，有价值的内容被杂乱的窗口淹没。','页泊尝试让这些内容重新拥有秩序：经常用到的内容容易到达，正在进行的任务可以归在一起，暂时无法处理的页面也有合适的停靠位置。'],quote:'好的秩序感，不应该让人感觉自己正在整理。',points:[['低负担入口','新标签页不应该像一个复杂的仪表盘，而应该让下一步清晰可见。'],['自然地归类','把打开的页面、书签与稍后阅读当成同一段浏览体验的不同状态。'],['花园里的想象力','在另一种视图中，用花与花盆重新理解标签页，但不改变功能本身的可靠性。']],visual:'yebo',status:'已发布稳定基线'},
-      {slug:'pageshot',name:'页截',en:'PageShot',type:'工具 · Chrome 扩展',year:'2026',number:'03',desc:'从整页截图到标注与保存，让完整的表达发生在一个稳定的画布上。',lead:'一款 Chrome 长截图与标注扩展。截取完整网页后，可以在稳定的画布上圈画、添加箭头或文字、马赛克和裁切，再复制或保存成图片。',story:['截图只是开始。真正影响体验的，是后面的一系列微小动作：裁切、圈出重点、写一句话、调整位置、把内容送到另一个地方。','我希望这些动作自然地发生在同一个空间，不因为选中了某个工具就让画布忽然变宽或变窄，也不为了简单的文字操作增加一次模式切换。'],quote:'工具越被频繁使用，越应该学会退后一步。',points:[['稳定的画布','属性面板以轻量浮层出现，不挤压正在编辑的内容。'],['就地完成','文字输入、拖动与编辑都发生在同一个工具里。'],['快速离开','完成标注后，可以直接复制或保存，无须走多余流程。']],visual:'pageshot',status:'稳定版本 V2.2.1'},
-      {slug:'yijian',name:'译见',en:'YiJian',type:'语言工具 · Chrome 扩展',year:'2026',number:'04',desc:'把翻译放在需要的时候，而不是覆盖每一个正在阅读的页面。',lead:'一款按需翻译的 Chrome 扩展。打开网页时保持原文，需要理解时再主动触发划词、段落或整页翻译，也支持邮件回复场景。',story:['阅读外文网页或邮件时，翻译很有帮助。但当它自动覆盖原文、改变排版、抢在读者前面做决定时，帮助就会变成打扰。','译见采用了一个简单而坚定的原则：自动就绪，不自动翻译。划词、段落和整页翻译，都由读者主动触发。'],quote:'好的辅助，是在需要时出现，在不需要时安静。',points:[['保留原文','新网页与新邮件始终先呈现自己的原始内容。'],['主动触发','用户决定翻译的范围和时间，扩展只在旁边准备好。'],['体验一致','网页阅读与邮件回复共享同一套克制、可靠的交互原则。']],visual:'yijian',status:'稳定版本 V1.4.1'},
-      {slug:'filedesk',name:'文序',en:'FileDesk',type:'文件工作台 · Web',year:'2026',number:'05',desc:'将 Excel 物料清单转换为结构清楚、可以继续编辑的 Word 文档。',lead:'一个面向真实文件的智能处理工作台。这里可以把旧版 Excel（.xls）、.xlsx 或 CSV 物料清单转换为可编辑的 Word 表格，并检查、下载转换结果。',story:['许多文件工具让用户首先回答技术问题：你需要哪个转换器？选择什么类型？准备点哪个按钮？但用户真正想做的只是拿着一个文件，完成某件事。','文序从文件本身出发，让系统理解可以执行的操作，再以合适的结构交付结果。它也要求排版能被认真对待：正确的内容，要以正确的方式出现。'],quote:'把复杂留在内部，把清楚留给使用者。',points:[['先理解','文件进入后，优先呈现适合它的处理方式。'],['结构优先','可编辑的表格应保留真实结构，而不只是看起来像表格。'],['呈现有序','去掉重复解释和干扰信息，把注意力还给文件和结果。']],visual:'filedesk',status:'持续迭代'},
-      {slug:'elementcopy',name:'元素复制',en:'ElementCopy Lite',type:'开发辅助 · Chrome 扩展',year:'2026',number:'06',desc:'选中网页元素，直接把位置、结构和修改要求整理成可交付的任务。',lead:'一个帮你和 AI 准确沟通网页修改任务的 Chrome 扩展。点选页面元素后，可以在原位置写修改要求，一次复制选择器、上下文和任务描述。',story:['和 AI 一起改页面时，沟通中最费力的经常不是修改本身，而是如何准确指出要修改哪个元素。','ElementCopy Lite 将目标元素的定位、上下文和修改要求组合为一条结构化任务。选择器优先可靠，文本和截图保持对应，把反复沟通变成一次交付。'],points:[['定位准确','保留元素选择器和所在区域，降低猜测成本。'],['要求就地写','直接给当前元素记录修改要求。'],['交付清楚','一次复制包含必要信息，减少来回询问。']],visual:'elementcopy',status:'稳定版本'},
-      {slug:'gestureflow',name:'鼠标手势',en:'GestureFlow',type:'效率工具 · Chrome 扩展',year:'2026',number:'07',desc:'用最自然的拖动完成后退、前进、关闭标签和超级拖拽。',lead:'一款让浏览器操作更快的鼠标手势扩展。用方向手势完成后退、前进、关闭标签，也能拖动链接、图片或文字执行对应操作。',story:['日常浏览中，一次返回、关闭标签、打开链接可能发生几百次。每次都去找小按钮，动作会变得割裂。','GestureFlow 用方向明确的鼠标手势完成高频动作，链接、图片与文字还可以通过超级拖拽快速打开或搜索。重点不是手势花样多，而是可靠、轻盈、不打断。'],points:[['高频动作','后退、前进、关闭标签的方向清楚。'],['超级拖拽','链接、图片和文字在一个自然动作里完成处理。'],['稳定优先','减少意外弹出菜单与拖拽失败。']],visual:'gestureflow',status:'稳定版本'}
+      {slug:'pageshot',name:'页截',en:'PageShot',type:'工具 · Chrome 扩展',year:'2026',number:'03',desc:'完整截取网页，直接在稳定的画布上标注、裁切，再一键复制或保存。',lead:'页截是一款 Chrome 长截图与标注工具。从截取整页、圈出重点，到添加箭头、文字、马赛克和裁切，整个过程都在同一张稳定的画布里完成，最后可以直接复制或保存图片。',story:['截图只是开始。真正影响体验的，是后面的一系列微小动作：裁切、圈出重点、写一句话、调整位置、把内容送到另一个地方。','我希望这些动作自然地发生在同一个空间，不因为选中了某个工具就让画布忽然变宽或变窄，也不为了简单的文字操作增加一次模式切换。'],quote:'工具越被频繁使用，越应该学会退后一步。',points:[['稳定的画布','属性面板以轻量浮层出现，不挤压正在编辑的内容。'],['就地完成','文字输入、拖动与编辑都发生在同一个工具里。'],['快速离开','完成标注后，可以直接复制或保存，无须走多余流程。']],visual:'pageshot',status:'稳定版本 V2.2.1'},
+      {slug:'yebo',name:'页泊',en:'YEBO',type:'浏览器 · Chrome 扩展',year:'2026',number:'02',desc:'把打开的标签、常用书签和稍后阅读整理在一个新标签页里。',lead:'页泊是一款 Chrome 新标签页扩展。它把高频书签、正在打开的标签和稍后阅读放在同一个工作台，帮助你快速整理浏览中的杂乱；也可以切换到花园模式，用更轻松的方式管理页面。',story:['打开一个网页很容易，但放下它并不容易。标签越积越多，稍后阅读越来越长，有价值的内容被杂乱的窗口淹没。','页泊尝试让这些内容重新拥有秩序：经常用到的内容容易到达，正在进行的任务可以归在一起，暂时无法处理的页面也有合适的停靠位置。'],quote:'好的秩序感，不应该让人感觉自己正在整理。',points:[['低负担入口','新标签页不应该像一个复杂的仪表盘，而应该让下一步清晰可见。'],['自然地归类','把打开的页面、书签与稍后阅读当成同一段浏览体验的不同状态。'],['花园里的想象力','在另一种视图中，用花与花盆重新理解标签页，但不改变功能本身的可靠性。']],visual:'yebo',status:'已发布稳定基线'},
+      {slug:'yijian',name:'译见',en:'YiJian',type:'语言工具 · Chrome 扩展',year:'2026',number:'04',desc:'阅读时保持原文，需要的时候再划词、翻译段落或整页。',lead:'译见是一款按需翻译的 Chrome 扩展。网页和邮件打开时默认保持原文；需要理解时，再主动触发划词、段落或整页翻译，还可以辅助处理邮件回复，不打断原本的阅读。',story:['阅读外文网页或邮件时，翻译很有帮助。但当它自动覆盖原文、改变排版、抢在读者前面做决定时，帮助就会变成打扰。','译见采用了一个简单而坚定的原则：自动就绪，不自动翻译。划词、段落和整页翻译，都由读者主动触发。'],quote:'好的辅助，是在需要时出现，在不需要时安静。',points:[['保留原文','新网页与新邮件始终先呈现自己的原始内容。'],['主动触发','用户决定翻译的范围和时间，扩展只在旁边准备好。'],['体验一致','网页阅读与邮件回复共享同一套克制、可靠的交互原则。']],visual:'yijian',status:'稳定版本 V1.4.1'},
+      {slug:'elementcopy',name:'元素复制',en:'ElementCopy Lite',type:'开发辅助 · Chrome 扩展',year:'2026',number:'06',desc:'在网页上点选元素、写下修改要求，一次复制可交给 AI 的任务。',lead:'ElementCopy Lite 是一个网页修改沟通工具。用鼠标选中想调整的元素，直接写下要求，扩展就会整理选择器、所在区域和相关上下文，生成可以复制给 AI 的结构化修改任务。',story:['和 AI 一起改页面时，沟通中最费力的经常不是修改本身，而是如何准确指出要修改哪个元素。','ElementCopy Lite 将目标元素的定位、上下文和修改要求组合为一条结构化任务。选择器优先可靠，文本和截图保持对应，把反复沟通变成一次交付。'],points:[['定位准确','保留元素选择器和所在区域，降低猜测成本。'],['要求就地写','直接给当前元素记录修改要求。'],['交付清楚','一次复制包含必要信息，减少来回询问。']],visual:'elementcopy',status:'稳定版本'},
+      {slug:'gestureflow',name:'鼠标手势',en:'GestureFlow',type:'效率工具 · Chrome 扩展',year:'2026',number:'07',desc:'用鼠标手势完成浏览器操作，让高频动作更顺手。',lead:'GestureFlow 是一款 Chrome 鼠标手势扩展。用自然的方向手势完成返回、前进、关闭标签；拖动链接、图片或文字，也可以快速打开或搜索，减少反复寻找浏览器按钮的时间。',story:['日常浏览中，一次返回、关闭标签、打开链接可能发生几百次。每次都去找小按钮，动作会变得割裂。','GestureFlow 用方向明确的鼠标手势完成高频动作，链接、图片与文字还可以通过超级拖拽快速打开或搜索。重点不是手势花样多，而是可靠、轻盈、不打断。'],points:[['高频动作','后退、前进、关闭标签的方向清楚。'],['超级拖拽','链接、图片和文字在一个自然动作里完成处理。'],['稳定优先','减少意外弹出菜单与拖拽失败。']],visual:'gestureflow',status:'稳定版本'}
     ];
     const entries = [
       {slug:'less',date:'2026 / 10 / 17',title:'少一点，才有可能看见真正重要的东西',desc:'一次关于界面、留白与不断删减的思考。',paragraphs:[
@@ -688,7 +816,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #617a62;outline-offset:5p
         '这就是我为什么会一直做下去。'
       ]}
     ];
-    const navItems=[['作品','works'],['实验室','lab'],['手记','journal'],['关于','about']];
+    const navItems=[['作品','works'],['手记','journal'],['关于','about']];
     const link=(page)=>`#/${page}`;
     const plainSVG=(inner)=>`<svg viewBox="0 0 620 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="作品视觉插画">${inner}</svg>`;
     function visual(slug){
@@ -698,19 +826,26 @@ a:focus-visible,button:focus-visible{outline:2px solid #617a62;outline-offset:5p
       if(slug==='yijian')return `<div class="translate-visual"><div class="trans-col"><div class="trans-word trans-en">A quieter way<br>to <span class="trans-highlight">understand</span><br>the world.</div></div><div class="trans-col"><div class="trans-word">以更安静的方式，<br>理解世界。</div></div></div>`;
       return `<div class="file-visual"><div class="file-sheet back"></div><div class="file-sheet front"><h3 class="file-title">让文件，<br>有序发生。</h3><div class="file-rule"></div><div class="file-table">${Array.from({length:12},(_,i)=>`<span>${i<3?['编号','物料名称','数量'][i]:'—'}</span>`).join('')}</div></div></div>`;
     }
+    const displayPosters = {
+      pageshot:'assets/projects/pageshot-film-cover-v3.5.webp',
+      yebo:'assets/projects/yebo-film-cover-v3.5.webp',
+      yijian:'assets/projects/yijian-film-cover-v3.5.webp',
+      elementcopy:'assets/projects/elementcopy-film-cover-v3.5.webp',
+      gestureflow:'assets/projects/gestureflow-film-cover-v3.5.webp'
+    };
     function stage(p,large=false){
       const mode=large?'case-stage':'feature-stage';
-      const image=projectImages[p.slug];
-      if(image)return `<div class="${mode} asset-stage asset-${p.slug}"><img src="${image.src}" alt="${image.alt}" loading="eager" decoding="async"></div>`;
+      const image=displayPosters[p.slug]?{src:displayPosters[p.slug],alt:p.name+' 真实操作视频画面'}:projectImages[p.slug];
+      if(image)return `<div class="${mode} asset-stage asset-${p.slug}"><img src="${image.src}" alt="${image.alt}" loading="eager" decoding="sync"></div>`;
       return `<div class="${mode} ${p.visual}">${visual(p.visual)}</div>`;
     }
     function header(active){return `<header class="site-head"><a class="brand" href="#/" aria-label="回到首页">光头<span class="brand-qiang">Qqiang</span></a><nav class="nav" aria-label="主导航">${navItems.map(([cn,key])=>`<a href="${link(key)}" class="${key===active?'active':''}">${cn}</a>`).join('')}</nav><button id="menu-toggle" class="menu-btn" aria-expanded="false" aria-label="打开菜单">菜单 <span aria-hidden="true">☰</span></button></header>`}
     const footer=()=>`<footer class="site-footer wrap"><div><div class="name">光头Qqiang</div><div class="foot-domain">qqiang.com</div></div><div class="foot-right"><a href="#/works">作品</a><a href="#/journal">手记</a><a href="#/about">关于</a><button type="button" class="foot-top" data-to-top>回到顶部 ↑</button></div></footer>`;
     const featured=(p,idx)=>`<article class="feature fade-in ${idx%2===1?'reverse':''}"><div class="feature-copy"><div class="feature-main"><div class="feature-category">${p.type}</div><h3 class="feature-title">${p.name}</h3><div class="feature-en">${p.en}</div><p class="feature-description">${p.desc}</p></div><div class="feature-bottom"><a href="#/work/${p.slug}" aria-label="了解${p.name}">查看作品 <span class="arrow" aria-hidden="true">↗</span></a></div></div><a class="stage-cover-link" href="#/work/${p.slug}" aria-label="查看${p.name}的作品详情">${stage(p)}</a></article>`;
-    function home(){return `<main class="page"><section class="hero wrap"><div class="hero-body"><h1 class="hero-title">把想法，<span class="indent">做成作品。</span></h1><div class="hero-aside"><p>我是光头Qqiang。<br>用 AI 和设计，创作有用、好玩的数字产品。</p><a class="text-link" href="#/about">认识我 <span aria-hidden="true">↗</span></a></div></div><div class="hero-bottom"><a href="#/works" data-scroll-works>看看作品 <span aria-hidden="true">↓</span></a></div></section><div class="wrap"><section class="intro fade-in" id="selected-work"><h2 class="section-title">作品</h2></section>${['pond','yebo','filedesk'].map((slug,idx)=>featured(projects.find(p=>p.slug===slug),idx)).join('')}<div class="work-more fade-in"><a class="text-link" href="#/works">查看全部 7 个作品 <span aria-hidden="true">↗</span></a></div><section class="closing fade-in"><h2>记录创造，<br>也记录一路上的思考。</h2><div class="closing-bottom"><a class="text-link" href="#/journal">阅读创作手记 <span aria-hidden="true">↗</span></a></div></section></div></main>`}
+    function home(){return `<main class="page"><section class="hero wrap"><div class="hero-body"><h1 class="hero-title">把想法，<span class="indent">做成作品。</span></h1><div class="hero-aside"><p>我是光头Qqiang。<br>用 AI Coding 把想法做成真正能使用的数字产品。</p><a class="text-link" href="#/about">认识我 <span aria-hidden="true">↗</span></a></div></div><div class="hero-bottom"><a href="#/works" data-scroll-works>看看作品 <span aria-hidden="true">↓</span></a></div></section><div class="wrap"><section class="intro fade-in" id="selected-work"><h2 class="section-title">作品</h2></section>${['pageshot','yebo','yijian'].map((slug,idx)=>featured(projects.find(p=>p.slug===slug),idx)).join('')}<div class="work-more fade-in"><a class="text-link" href="#/works">查看作品 <span aria-hidden="true">↗</span></a></div><section class="closing fade-in"><h2>记录创造，<br>也记录一路上的思考。</h2><div class="closing-bottom"><a class="text-link" href="#/journal">阅读创作手记 <span aria-hidden="true">↗</span></a></div></section></div></main>`}
     function innerIntro(n,label,title,desc){return `<section class="inner-intro wrap"><h1>${title}</h1>${desc?`<p class="subline">${desc}</p>`:``}</section>`}
-    function works(){return `<main class="page">${innerIntro('01','SELECTED WORKS','全部 7 个作品')}<section class="wrap"><div class="works-toolbar"><div class="filters" role="group" aria-label="作品筛选"><button type="button" class="filter active" data-filter="all" aria-pressed="true">全部</button><button type="button" class="filter" data-filter="browser" aria-pressed="false">浏览器工具</button><button type="button" class="filter" data-filter="other" aria-pressed="false">独立作品</button></div></div><div class="works-list" id="works-list">${workRows('all')}</div></section></main>`}
-    function workRows(filter){return projects.filter(p=>filter==='all'||(filter==='browser'?['yebo','pageshot','yijian','elementcopy','gestureflow'].includes(p.slug):!['yebo','pageshot','yijian','elementcopy','gestureflow'].includes(p.slug))).map(p=>`<a class="works-row" href="#/work/${p.slug}"><div><div class="wcn">${p.name}</div><div class="wen">${p.en}</div></div><div class="wcategory">${p.type}</div><div class="wgo">↗</div></a>`).join('')||'<div class="works-empty">这里还没有作品。</div>'}
+    function works(){return `<main class="page">${innerIntro('','','作品','')}<section class="wrap"><p class="works-intro">这些工具来自日常使用中遇到的小问题。点开一件作品，就能看见它真正的操作过程。</p><div class="works-list works-film-list">${workRows()}</div></section></main>`}
+    function workRows(){return projects.map(p=>`<a class="works-row works-film-row" href="#/work/${p.slug}" aria-label="观看${p.name}真实操作视频"><span class="works-preview"><img src="${displayPosters[p.slug]}" alt="${p.name}真实操作录像画面" loading="lazy"></span><span class="works-description"><span class="wcn">${p.name} <span class="work-en-inline">${p.en}</span></span><span class="wcopy">${p.desc}</span><span class="wcategory">${p.type}</span></span><span class="wgo" aria-hidden="true">↗</span></a>`).join('')}
     const editorial={
       pond:{why:'给忙碌的屏幕，留一片安静。',details:'不是每一次互动，都需要一个任务。'},
       yebo:{why:'打开的页面，也值得被好好安放。',details:'把复杂收起来，把秩序留下来。'},
@@ -766,36 +901,90 @@ a:focus-visible,button:focus-visible{outline:2px solid #617a62;outline-offset:5p
       gestureflow:'使用鼠标手势与超级拖拽完成浏览器操作'
     };
     function filedeskFilm(){
-      return `<div class="film-app fd-film">
-        <div class="film-app-header"><div class="film-app-brand"><span class="film-app-icon">▥</span> 文序 <span>FileDesk</span></div><div class="film-local">文件工作台</div></div>
-        <div class="fd-film-main">
-          <div class="fd-film-title" data-fd-title>放入文件</div>
-          <div class="fd-film-drop"><div class="fd-film-paper">⇧</div><strong>拖拽文件到这里</strong><span>或点击选择文件</span><span class="fd-film-types">PDF　·　Excel / CSV / Word / PPT　·　图片</span></div>
-          <div class="fd-film-dragfile"><span class="fd-film-xls">X</span><span>设备物料清单.xlsx</span></div>
-          <div class="fd-film-board">
-            <section class="fd-film-pane fd-film-file"><div class="fd-film-pane-head">当前文件 <span>1</span></div><div class="fd-film-file-row"><span class="fd-film-xls">X</span><div>设备物料清单.xlsx<small>XLSX · 物料明细表</small></div></div></section>
-            <section class="fd-film-pane fd-film-actions"><div class="fd-film-pane-head">处理方式</div><div class="fd-film-choice">表格 → 可编辑 Word<span>直接读取 Excel 单元格，生成可编辑 Word 表格。</span></div><div class="fd-film-choice muted">表格 → PDF</div><div class="fd-film-generate">生成可编辑 Word　→</div></section>
-          </div>
-          <div class="fd-film-working"><span class="fd-film-spinner"></span>正在生成可编辑 Word…</div>
-          <div class="fd-film-complete"><div class="fd-film-success">✓　处理完成</div><div class="fd-film-outfile"><span class="fd-film-word">W</span><div>设备物料清单_可编辑表格.docx<small>已生成，可在 Word 中编辑</small></div></div><a class="fd-film-download" href="assets/projects/文序-物料清单示例-可编辑Word.docx" download="文序-物料清单示例-可编辑Word.docx">↓　下载 Word</a></div>
-          <div class="fd-film-wordview"><div class="fd-film-docbar"><span>设备物料清单_可编辑表格.docx</span><a class="fd-film-doclink" href="assets/projects/文序-物料清单示例-可编辑Word.docx" download="文序-物料清单示例-可编辑Word.docx">下载这份 Word ↗</a></div><div class="fd-film-paperpage"><h3>设备物料清单</h3><table aria-label="实际 Word 文件物料预览"><thead><tr><th>物料编号</th><th>物料名称</th><th>型号</th><th>数量</th></tr></thead><tbody><tr><td>A-001</td><td>铝型材框架</td><td>4040-L800</td><td>12</td></tr><tr><td>A-002</td><td>定位销</td><td>D8×30</td><td>24</td></tr><tr><td>A-003</td><td>气动滑台</td><td>MXQ12-50</td><td>4</td></tr></tbody></table></div></div>
+      // Scene is modeled on FileDesk V1.0's verified upload, processing and completed screens.
+      // The Word rows are drawn from the actual downloadable .docx in assets/projects.
+      const rows=[
+        ['2','A-001','铝型材框架','4040-L800','12','根'],
+        ['3','A-002','定位销','D8×30','24','个'],
+        ['4','A-003','气动滑台','MXQ12-50','4','套'],
+        ['5','A-004','接近开关','PNP-M12','8','个'],
+        ['6','A-005','伺服电机','400W-AC','2','台'],
+        ['7','A-006','线性导轨','HGR15-600','6','根'],
+        ['8','A-007','光电传感器','E3Z-D61','5','个'],
+        ['9','A-008','紧固螺栓','M6×20','60','个']
+      ];
+      const doc='assets/projects/文序-物料清单示例-可编辑Word.docx';
+      return `<div class="fd31-app">
+        <div class="fd31-header"><div class="fd31-brand"><span class="fd31-logo">∥</span>文序 <small>FileDesk</small></div><div class="fd31-local">仅在本机处理</div></div>
+        <div class="fd31-space">
+          <section class="fd31-view fd31-view-upload" aria-label="文件上传界面">
+            <h2>放入文件</h2>
+            <div class="fd31-dropzone" data-fd31-point="drop"><div class="fd31-dropicon">↥</div><strong>拖拽文件到这里</strong><p>或 点击选择文件</p><div class="fd31-drop-types">PDF　·　Excel / CSV / Word / PPT　·　图片</div></div>
+          </section>
+          <div class="fd31-dragged" aria-hidden="true"><span class="fd31-fileicon">▦</span>设备物料清单.xlsx</div>
+          <section class="fd31-view fd31-view-setup" aria-label="文件处理方式选择界面">
+            <div class="fd31-setup-head"><h2>表格文件</h2><span class="fd31-secondary-btn">↻　开始新任务</span></div>
+            <div class="fd31-layout">
+              <div class="fd31-pane fd31-pane-files"><div class="fd31-pane-head"><span>当前文件 <span class="fd31-chip">1</span></span><span class="fd31-mini-link">＋ 继续添加</span></div><div class="fd31-loaded"><span class="fd31-fileicon">▦</span><div>设备物料清单.xlsx<small>XLSX · 8 行物料</small></div></div></div>
+              <div class="fd31-pane fd31-pane-actions"><div class="fd31-pane-head">处理方式</div>
+                <div class="fd31-choose fd31-option-word" data-fd31-point="word"><span>▤</span><div><strong>表格 → 可编辑 Word</strong><small>保留结构，生成可继续编辑的表格</small></div></div>
+                <div class="fd31-choose"><span>▤</span><div><strong>表格 → 智能排版 PDF</strong></div></div>
+                <div class="fd31-choose"><span>▤</span><div><strong>导出 CSV</strong></div></div>
+                <div class="fd31-generate" data-fd31-point="generate">生成可编辑 Word　 →</div>
+              </div>
+            </div>
+          </section>
+          <div class="fd31-loading" aria-label="文件正在转换"><span class="fd31-spin"></span><strong>正在生成可编辑 Word</strong><p>保留原始表格数据与结构</p></div>
+          <section class="fd31-view fd31-view-done" aria-label="文档转换完成">
+            <div class="fd31-done-ribbon"><div class="fd31-check">✓</div><div><strong>处理完成，Word 已生成</strong><small>设备物料清单_可编辑表格.docx</small></div><span class="fd31-button" data-fd31-point="download">下载 Word</span></div>
+            <h2>放入文件</h2>
+            <div class="fd31-done-drop"><div class="fd31-dropicon">↥</div><strong>拖拽文件到这里</strong><span>或 点击选择文件</span><small>PDF　·　Excel / CSV / Word / PPT　·　图片</small></div>
+          </section>
+          <section class="fd31-view fd31-view-preview" aria-label="转换完成的 Word 文件内容">
+            <div class="fd31-doc-top"><div class="fd31-wordfile"><span class="fd31-word-icon">W</span><span>设备物料清单_可编辑表格.docx</span></div><span class="fd31-doc-label">文档预览</span></div>
+            <div class="fd31-paper" data-fd31-point="preview"><h3>设备物料清单</h3><div class="fd31-paper-meta"><span>设备物料清单</span><span>明细数量　8 项</span></div>
+              <table class="fd31-table"><thead><tr><th>序号</th><th>物料编号</th><th>物料名称</th><th>型号</th><th>数量</th><th>单位</th></tr></thead><tbody>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table>
+            </div>
+          </section>
         </div>
       </div>`;
     }
     function otherFilm(p){
       if(p.slug==='pond')return `<div class="film-product-pond"><div class="film-pond-water">${visual('pond')}</div><div class="film-pond-ring first"></div><div class="film-pond-ring second"></div></div>`;
-      if(p.slug==='yebo')return `<div class="mini-device mini-yebo">
-        <div class="mini-chrome"><div class="mini-dots"><i></i><i></i><i></i></div><span>页泊 · YEBO</span><span class="mini-chrome-right">新标签页</span></div>
-        <div class="mini-yebo-main"><h3>让每一个页面，都有归处。</h3><div class="mini-yebo-search">搜索或打开新页面 <span>⌕</span></div>
-          <div class="mini-yebo-grid"><section><div class="mini-pane-heading">打开的页面 <span class="yb-count-before">3</span><span class="yb-count-after">2</span></div><div class="mini-browser-row">产品灵感 <small>notes.example</small></div><div class="mini-browser-row mini-tab-moving">稍后想读的文章 <small>article.example</small><span class="mini-row-action">加入稍后阅读 ↗</span></div><div class="mini-browser-row">技术文档 <small>docs.example</small></div></section><section><div class="mini-pane-heading">稍后阅读 <span class="yb-count-before">1</span><span class="yb-count-after">2</span></div><div class="mini-browser-row">设计参考 <small>design.example</small></div><div class="mini-browser-row mini-tab-added">稍后想读的文章 <small>article.example</small></div></section></div>
-        </div></div>`;
-      if(p.slug==='pageshot')return `<div class="mini-device mini-pageshot"><div class="mini-chrome"><div class="mini-dots"><i></i><i></i><i></i></div><span>页截 · 编辑截图</span><span class="mini-chrome-right mini-shot-status">编辑中</span></div><div class="mini-shot-workspace"><aside class="mini-shot-toolbar"><span class="mini-tool-active">□</span><span>↗</span><span>▤</span><span>✎</span></aside><div class="mini-shot-paper"><h3>把重点留在画面里。</h3><p>长截图之后，可以直接圈画、添加标注，最后导出结果。</p><div class="mini-illustration"><div class="mini-ill-title">关键内容</div><div class="mini-ill-line"></div><div class="mini-ill-line short"></div></div><div class="mini-crop-select"></div><svg class="mini-drawn-arrow" viewBox="0 0 180 90" aria-hidden="true"><path d="M16 68 Q66 10 157 23 L136 12 M157 23 L136 40"/></svg><div class="mini-saved">✓ 已导出 PNG</div></div></div></div>`;
+      if(p.slug==='yebo')return `<div class="yb32-stage">
+        <div class="yb32-desktop"><div class="yb32-shot"><img src="assets/projects/yebo.webp" alt="页泊 YEBO 花园模式真实项目预览画面" draggable="false">
+          <span data-v32-desktop="flower" class="v32-hotspot" style="left:50.5%;top:47.2%"></span>
+          <div class="yb32-ring"></div><div class="yb32-menu" data-v32-desktop="menu">加入稍后阅读 <span aria-hidden="true">↗</span></div>
+          <span class="yb32-mask"></span><span class="yb32-flying" aria-hidden="true">X</span>
+          <div class="yb32-newrow" data-v32-desktop="later"><b>X</b><span>稍后想读的文章<small>已加入稍后阅读</small></span></div>
+        </div></div>
+        <div class="yb32-mobile"><div class="yb32-m-head">早上好。</div><div class="yb32-m-search">搜索网页、书签、标签页… <span>⌕</span></div>
+          <div class="yb32-m-group"><div class="yb32-m-section">花园</div><div class="yb32-m-plants"><div class="yb32-m-plant"><span class="yb32-m-flower">F</span><span class="yb32-m-stem">♧</span><span class="yb32-m-pot">Figma</span></div><div class="yb32-m-plant xb"><span class="yb32-m-flower" data-v32-mobile="flower">X</span><span class="yb32-m-stem">♧</span><span class="yb32-m-pot">X</span></div><div class="yb32-m-plant"><span class="yb32-m-flower">✳</span><span class="yb32-m-stem">♧</span><span class="yb32-m-pot">AI 工具</span></div></div></div>
+          <div class="yb32-m-save" data-v32-mobile="menu">加入稍后阅读 <span>↗</span></div><div class="yb32-m-later" data-v32-mobile="later"><strong>稍后阅读</strong><div class="yb32-m-reading">设计参考</div><div class="yb32-m-added"><span>X</span> 稍后想读的文章</div></div>
+        </div>
+      </div>`;
+      if(p.slug==='pageshot')return `<div class="ps32-stage">
+        <div class="ps32-desktop"><div class="ps32-shot"><img src="assets/projects/pageshot.webp" alt="页截 V2.2.1 实际编辑器画面" draggable="false">
+          <span data-v32-desktop="circle" class="v32-hotspot" style="left:2.5%;top:22%"></span>
+          <span data-v32-desktop="number" class="v32-hotspot" style="left:15.6%;top:28.5%"></span>
+          <span data-v32-desktop="arrow" class="v32-hotspot" style="left:2.5%;top:10%"></span>
+          <span data-v32-desktop="save" class="v32-hotspot" style="left:93%;top:3.5%"></span>
+          <svg class="ps32-overlay" viewBox="0 0 1480 900" preserveAspectRatio="none" aria-hidden="true"><ellipse class="ps32-circle" cx="238" cy="264" rx="62" ry="46"/><path class="ps32-arrow" d="M630 465 Q505 430 355 339 L373 372 M355 339 L398 335"/></svg>
+          <div class="ps32-toast">✓ 已保存 PNG 图片</div>
+        </div></div>
+        <div class="ps32-mobile"><div class="ps32-m-head"><strong>页截 <small>PageShot</small></strong><span class="ps32-m-save" data-v32-mobile="save">↓ 保存 PNG</span></div>
+          <div class="ps32-m-content"><aside><span data-v32-mobile="circle" class="ps32-m-tool">◯</span><span data-v32-mobile="arrow" class="ps32-m-tool">↗</span><span class="ps32-m-tool">✎</span><span class="ps32-m-tool">▧</span></aside><div class="ps32-m-canvas">
+            <div class="ps32-m-document"><div class="ps32-m-dash"><div><small>Tasks in progress</small><strong data-v32-mobile="number">24</strong></div><div><small>Pending review</small><strong>08</strong></div></div><div class="ps32-m-subtitle">Recent activity</div><div class="ps32-m-line"></div><div class="ps32-m-line short"></div><div class="ps32-m-line"></div><div class="ps32-m-line short"></div></div>
+            <svg class="ps32-m-overlay" viewBox="0 0 285 330" aria-hidden="true"><ellipse class="ps32-circle" cx="70" cy="94" rx="41" ry="34"/><path class="ps32-arrow" d="M251 176 Q201 131 108 95 L129 124 M108 95 L145 90"/></svg>
+          </div></div><div class="ps32-m-toast">✓ 已保存 PNG</div>
+        </div>
+      </div>`;
       if(p.slug==='yijian')return `<div class="mini-device mini-yijian"><div class="mini-chrome"><div class="mini-dots"><i></i><i></i><i></i></div><span>Reading notes</span><span class="mini-chrome-right">原文阅读</span></div><div class="mini-read-body"><h3>Reading in another language</h3><p>Good design should make complex things feel <span class="mini-foreign-selected">simple and effortless.</span> A quiet tool respects the reader's attention.</p><div class="mini-translate-trigger">译见 · 翻译选中内容</div><div class="mini-translation-result"><div>译见 · YiJian</div><p>简单而毫不费力。</p></div></div></div>`;
       if(p.slug==='elementcopy')return `<div class="mini-device mini-elementcopy"><div class="mini-chrome"><div class="mini-dots"><i></i><i></i><i></i></div><span>正在修改的网页</span><span class="mini-chrome-right">元素复制</span></div><div class="mini-ec-body"><div class="mini-ec-page"><h3>订阅与套餐</h3><div class="mini-ec-row">当前订阅 <span>月度会员</span></div><div class="mini-ec-highlight"></div></div><div class="mini-ec-task"><div>此元素修改要求</div><p class="mini-ec-typed">将当前订阅信息的文字层级整理清楚。</p><div class="mini-ec-output"><span>元素定位</span><code>section.subscription > div.info</code><span>修改要求</span><p>将当前订阅信息的文字层级整理清楚。</p></div><div class="mini-ec-done">✓ 已复制结构化任务</div></div></div></div>`;
       if(p.slug==='gestureflow')return `<div class="mini-device mini-gestureflow"><div class="mini-chrome"><div class="mini-dots"><i></i><i></i><i></i></div><span>浏览器标签管理</span><span class="mini-chrome-right">手势已就绪</span></div><div class="mini-gf-tabs"><span>作品页面</span><span class="mini-gf-closing">临时打开的标签 ×</span><span class="mini-gf-new">新打开的链接 ↗</span></div><div class="mini-gf-page"><h3>更快地回到想去的地方。</h3><p>使用鼠标手势关闭临时标签，拖拽链接打开新页面。</p><svg class="mini-gf-route" viewBox="0 0 180 130" aria-hidden="true"><path d="M26 85 H122 V32"/><path d="M110 44 L122 32 L134 44"/></svg><div class="mini-gf-complete">已关闭标签 · 已打开链接</div></div></div>`;
       const image=projectImages[p.slug];return `<div class="film-product-shot"><img src="${image?.src||''}" alt="${image?.alt||p.name}"></div>`;
     }
-    function showcase(p){
+    function originalShowcase(p){
       const url=githubLinks[p.slug];
       const github=url&&/^https:\/\/github\.com\/[^/]+\/[^/?#]+\/?$/.test(url)?`<a class="film-github" href="${url}" target="_blank" rel="noopener noreferrer">GitHub 源码 <span aria-hidden="true">↗</span></a>`:'';
       return `<section class="case-showcase wrap" aria-label="${p.name}操作展示">
@@ -805,6 +994,53 @@ a:focus-visible,button:focus-visible{outline:2px solid #617a62;outline-offset:5p
         </div>${github?`<div class="film-link-row">${github}</div>`:''}
       </section>`;
     }
+
+    const PS33_CLIP = 'assets/projects/pageshot-real-v3.5.mp4';
+    let ps33Stop=()=>{};
+    function bindPageShotVideo(){
+      ps33Stop();ps33Stop=()=>{};
+      const video=document.querySelector('[data-ps33-video]');if(!video)return;
+      const replay=document.querySelector('[data-ps33-replay]');
+      const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      let watched=false;let ended=false;
+      video.muted=true;video.playsInline=true;if(!video.hasAttribute("src"))video.src=PS33_CLIP;video.load();
+      const observer=('IntersectionObserver' in window)?new IntersectionObserver(entries=>{
+        const visible=entries[0].intersectionRatio>=0.35;
+        if(visible&&!ended&&!watched&&!reduced){watched=true;video.play().catch(()=>{});}
+        else if(!visible&&!video.paused){video.pause();watched=false;}
+      },{threshold:[0,.35,.75]}):null;
+      if(observer)observer.observe(video);else if(!reduced)video.play().catch(()=>{});
+      video.addEventListener('ended',()=>{ended=true;});
+      replay?.addEventListener('click',()=>{ended=false;watched=true;video.currentTime=0;video.play().catch(()=>{});});
+      ps33Stop=()=>observer?.disconnect();
+    }
+
+    const chromeV34 = {
+      yebo: {src:'assets/projects/yebo-real-v3.4.mp4', label:'页泊 YEBO 浏览器整理和花园模式操作',poster:'assets/projects/yebo.webp'},
+      yijian: {src:'assets/projects/yijian-real-v3.4.mp4', label:'译见 YiJian 在 Gmail 中按需翻译邮件内容',poster:'assets/projects/yijian-selection.webp'},
+      elementcopy: {src:'assets/projects/elementcopy-real-v3.4.mp4', label:'ElementCopy Lite 定位网页元素、填写修改任务',poster:'assets/projects/elementcopy.webp'},
+      gestureflow: {src:'assets/projects/gestureflow-real-v3.4.mp4', label:'GestureFlow 浏览器手势与超级拖拽真实操作',poster:'assets/projects/gestureflow.webp'}
+    };
+    function showcase(p){
+      const real=chromeV34[p.slug];
+      if(real){
+        const github=githubLinks[p.slug];
+        return `<section class="case-showcase wrap" aria-label="${p.name}真实使用录像">
+          <div class="ps33-shell"><video class="ps33-video" data-ps33-video muted playsinline preload="metadata" controls poster="${displayPosters[p.slug] || real.poster}" src="${real.src}" aria-label="${real.label}"></video></div>
+          <div class="ps33-bottom"><button type="button" class="ps33-replay" data-ps33-replay>重播 ↻</button></div>
+          <div class="film-link-row"><a class="film-github" href="${github}" target="_blank" rel="noopener noreferrer">GitHub 源码 <span aria-hidden="true">↗</span></a></div>
+        </section>`;
+      }
+
+      if(p.slug==='pageshot'){
+        return `<section class="case-showcase wrap" aria-label="页截真实操作录屏">
+          <div class="ps33-shell"><video class="ps33-video" data-ps33-video muted playsinline preload="metadata" controls poster="${displayPosters.pageshot}"  aria-label="页截 PageShot 真实操作：截图标注、箭头、文字、高亮及保存"></video></div>
+          <div class="ps33-bottom"><button type="button" class="ps33-replay" data-ps33-replay>重播 ↻</button></div>
+          <div class="film-link-row"><a class="film-github" href="https://github.com/Qqiang2738/PageShot" target="_blank" rel="noopener noreferrer">GitHub 源码 <span aria-hidden="true">↗</span></a></div>
+        </section>`;
+      }
+      return originalShowcase(p);
+    }
     const filmClosers=[];
     function bindFilms(){
       filmClosers.splice(0).forEach(fn=>fn());
@@ -812,16 +1048,39 @@ a:focus-visible,button:focus-visible{outline:2px solid #617a62;outline-offset:5p
       const slug=shell.dataset.film,reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       const cursor=shell.querySelector('.film-cursor');const progress=shell.querySelector('[data-film-progress]');
       const toggle=shell.querySelector('[data-film-toggle]');const stage=shell.querySelector('.film-stage');
-      let ms=reduced?filmLength:0, phase=-1, playing=!reduced, visible=true, last=null, raf=0;
+      const duration=slug==='filedesk'?21800:(['yebo','pageshot'].includes(slug)?18000:filmLength);
+       const count=slug==='filedesk'?7:6;
+       const cues=slug==='filedesk'?[0,2700,5900,8200,11600,15100,17900,21800]:slug==='yebo'?[0,2800,5700,8600,11500,14800,18000]:slug==='pageshot'?[0,2300,5000,8100,11000,14800,18000]:null;
+       let ms=reduced?duration:0, phase=-1, playing=!reduced, visible=true, last=null, raf=0;
       function draw(){
-        const p=Math.min(5,Math.floor(ms/filmLength*6));
-        if(p!==phase){phase=p;shell.dataset.phase=String(phase);if(slug==='filedesk'){const title=shell.querySelector('[data-fd-title]');if(title)title.textContent=['放入文件','表格文件','表格文件','正在转换','处理完成','查看结果'][phase]}const coords=filmPositions[slug][phase];cursor.style.left=coords[0]+'%';cursor.style.top=coords[1]+'%';shell.querySelector('.film-click')?.classList.remove('pulse');requestAnimationFrame(()=>shell.querySelector('.film-click')?.classList.add('pulse'))}
-        progress.style.width=Math.min(100,(ms/filmLength)*100)+'%';
-        if(ms>=filmLength){playing=false;toggle.textContent=reduced?'查看开始':'重播';toggle.setAttribute('aria-label',reduced?'查看演示开头':'重新播放演示')}
+        const p=cues?Math.min(count-1,cues.findIndex((n,i)=>i<count&&ms>=n&&ms<cues[i+1])<0?count-1:cues.findIndex((n,i)=>i<count&&ms>=n&&ms<cues[i+1])):Math.min(count-1,Math.floor(ms/duration*count));
+        if(p!==phase){
+          phase=p;shell.dataset.phase=String(phase);
+          if(slug==='filedesk'){
+            const point=['drop','drop','word','word','generate','download','preview'][phase];
+            const target=shell.querySelector(`[data-fd31-point="${point}"]`);
+            if(target){const a=target.getBoundingClientRect(),b=stage.getBoundingClientRect();let x=a.left-b.left+a.width*.55,y=a.top-b.top+a.height*.53;
+              if(phase===1){x=a.left-b.left+a.width*.45;y=a.top-b.top+a.height*.55}
+              cursor.style.left=Math.min(b.width-26,Math.max(8,x))+'px';cursor.style.top=Math.min(b.height-35,Math.max(8,y))+'px';shell.style.setProperty('--click-x',Math.min(b.width-26,Math.max(8,x))+'px');shell.style.setProperty('--click-y',Math.min(b.height-35,Math.max(8,y))+'px');
+            }
+          }else if(slug==='yebo'||slug==='pageshot'){
+            const point=(slug==='yebo'?['flower','flower','menu','menu','later','later']:['circle','circle','number','arrow','save','save'])[phase];
+            const small=window.matchMedia('(max-width:750px)').matches;
+            const target=shell.querySelector(`[data-v32-${small?'mobile':'desktop'}="${point}"]`);
+            if(target){const a=target.getBoundingClientRect(),b=stage.getBoundingClientRect();const x=Math.max(8,Math.min(b.width-24,a.left-b.left+a.width/2));const y=Math.max(8,Math.min(b.height-30,a.top-b.top+a.height/2));cursor.style.left=x+'px';cursor.style.top=y+'px';shell.style.setProperty('--click-x',x+'px');shell.style.setProperty('--click-y',y+'px')}
+          }else{
+            const coords=filmPositions[slug][phase];cursor.style.left=coords[0]+'%';cursor.style.top=coords[1]+'%';
+          }
+          const pulse=shell.querySelector('.film-click');pulse?.classList.remove('pulse');
+          // Click only when a decision or action is visibly taken; no pulsating "tutorial" hotspots.
+          if((slug==='filedesk'&&[3,4,5,6].includes(phase))||(slug==='yebo'&&[2,3].includes(phase))||(slug==='pageshot'&&[1,3,5].includes(phase))||(!['filedesk','yebo','pageshot'].includes(slug)))requestAnimationFrame(()=>pulse?.classList.add('pulse'));
+        }
+        progress.style.width=Math.min(100,(ms/duration)*100)+'%';
+        if(ms>=duration){playing=false;toggle.textContent=reduced?'查看开始':'重播';toggle.setAttribute('aria-label',reduced?'查看演示开头':'重新播放演示')}
         else{toggle.textContent=reduced?'查看结果':(playing?'暂停':'继续');toggle.setAttribute('aria-label',reduced?'查看演示结果':(playing?'暂停演示':'继续播放演示'))}
       }
-      function tick(t){if(last!==null&&playing&&visible)ms=Math.min(filmLength,ms+Math.min(80,t-last));last=t;draw();raf=requestAnimationFrame(tick)}
-      toggle.addEventListener('click',()=>{if(reduced){ms=ms>=filmLength?0:filmLength;playing=false}else{if(ms>=filmLength)ms=0;playing=!playing}last=null;draw()});
+      function tick(t){if(last!==null&&playing&&visible)ms=Math.min(duration,ms+Math.min(80,t-last));last=t;draw();raf=requestAnimationFrame(tick)}
+      toggle.addEventListener('click',()=>{if(reduced){ms=ms>=duration?0:duration;playing=false}else{if(ms>=duration)ms=0;playing=!playing}last=null;draw()});
       const observer=('IntersectionObserver' in window)?new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;last=null},{threshold:.13}):null;
       observer?.observe(shell);
       // User controls animations. No automatic files are downloaded by the film.
@@ -839,23 +1098,23 @@ a:focus-visible,button:focus-visible{outline:2px solid #617a62;outline-offset:5p
     };
     function casePage(p){
       const next=projects[(projects.indexOf(p)+1)%projects.length];
-      const paragraphs=workNotes[p.slug]||[];
       return `<main class="page">
         <section class="case-top wrap">
-          <a href="#/works" class="case-back"><span aria-hidden="true">←</span> 返回作品列表</a>
+          <a href="#/works" class="case-back"><span aria-hidden="true">←</span> 返回作品</a>
           <div class="case-head"><div><h1>${p.name}</h1><div class="en-name">${p.en}</div></div><p class="case-lead">${p.lead}</p></div>
         </section>
         ${showcase(p)}
-        <section class="case-story wrap" aria-label="关于这件作品"><div class="case-story-text">${paragraphs.map(txt=>`<p>${txt}</p>`).join('')}</div></section>
-        <section class="case-next wrap"><a href="#/work/${next.slug}" class="next-name">下一件作品：${next.name} <span class="next-arrow" aria-hidden="true">↗</span></a><a href="#/works" class="back-all">全部 7 个作品 ↗</a></section>
+        <section class="case-next wrap"><a href="#/work/${next.slug}" class="next-name">下一件作品：${next.name} <span class="next-arrow" aria-hidden="true">↗</span></a><a href="#/works" class="back-all">返回作品 ↗</a></section>
       </main>`;
     }
     function journal(){return `<main class="page">${innerIntro('03','JOURNAL','手记','')}<section class="wrap"><div class="notes-list">${entries.map(e=>`<a class="notes-row" href="#/journal/${e.slug}"><div class="date">${e.date.replaceAll(' / ','.')}</div><div><h2>${e.title}</h2><div class="note-desc">${e.desc}</div></div><div class="narrow" aria-hidden="true">↗</div></a>`).join('')}</div></section></main>`}
     function article(e){return `<main class="page wrap"><article class="article-wrap"><a href="#/journal" class="case-back">← 返回手记</a><div class="article-head"><div class="article-date">${e.date.replaceAll(' / ','.')}</div><h1>${e.title.replace('，','，<br class="article-title-break">')}</h1></div><div class="article-body">${e.paragraphs.map(p=>`<p>${p}</p>`).join('')}<div style="padding-top:40px"><a class="text-link" href="#/journal">查看全部手记 <span aria-hidden="true">↗</span></a></div></div></article></main>`}
-    function lab(){return `<main class="page">${innerIntro('02','EXPERIMENTAL LAB','实验室','')}<section class="lab-list wrap"><article class="lab-item"><div class="lab-art"><svg viewBox="0 0 200 160" width="185" aria-label="细线绘制的水纹实验"><g fill="none" stroke="#8aa28b" stroke-width="1"><ellipse cx="100" cy="80" rx="23" ry="15"/><ellipse cx="100" cy="80" rx="45" ry="29"/><ellipse cx="100" cy="80" rx="70" ry="45"/><ellipse cx="100" cy="80" rx="90" ry="62"/></g><circle cx="100" cy="80" r="2" fill="#69856f"/></svg></div><div><h2 class="lab-name">一圈涟漪</h2><p class="lab-desc">探索轻微的反馈，怎样让屏幕上的动作拥有触感。</p></div></article><article class="lab-item"><div class="lab-art"><svg viewBox="0 0 200 160" width="185" aria-label="几何秩序实验"><g fill="none" stroke="#a4a093" stroke-width="1.5"><rect x="31" y="25" width="65" height="48"/><rect x="103" y="25" width="65" height="48"/><rect x="31" y="80" width="137" height="57"/></g><path d="M45 48h33M117 48h33M48 105h104M48 119h62" stroke="#a4a093"/></svg></div><div><h2 class="lab-name">另一种秩序</h2><p class="lab-desc">让整理与发现，不必像在管理文件。</p></div></article><article class="lab-item"><div class="lab-art"><svg viewBox="0 0 200 160" width="185" aria-label="小型数字生命实验"><g fill="none" stroke="#9baba5" stroke-width="1"><circle cx="100" cy="80" r="58"/><ellipse cx="100" cy="80" rx="19" ry="58"/><path d="M42 80h116M58 42Q100 90 142 42M58 118Q100 70 142 118"/></g></svg></div><div><h2 class="lab-name">数字小生命</h2><p class="lab-desc">关于陪伴、玩耍，以及无需任务目标的互动。</p></div></article></section></main>`}
-    function about(){return `<main class="page">${innerIntro('04','ABOUT','关于','')}<div class="wrap"><section class="about-block"><h2 class="about-big">让想法，<br>真正发生。</h2><div class="about-body"><p>我是一名独立创造者，正在使用 AI Coding，把脑海里的想法变成能运行、能使用的数字作品。</p><p>过去，我更多地在观察问题、描述需求、设计产品。现在，我也参与实现和打磨，直到一个想法真正被做出来。</p><p>我做浏览器工具，也做安静的桌面体验。它们类型不同，但都应该清楚、好用，保留一点人的温度。</p><div style="margin-top:45px"><a class="text-link" href="#/works">看看我的作品 <span aria-hidden="true">↗</span></a></div></div></section></div></main>`}
-    const routes=()=>{const bits=(location.hash||'#/').slice(2).split('/').filter(Boolean);const root=bits[0]||'';if(root==='works')return {active:'works',html:works()};if(root==='work'){const p=projects.find(x=>x.slug===bits[1])||projects[0];return {active:'works',html:casePage(p)}}if(root==='journal'&&bits[1]){const e=entries.find(x=>x.slug===bits[1])||entries[0];return {active:'journal',html:article(e)}}if(root==='journal')return {active:'journal',html:journal()};if(root==='lab')return {active:'lab',html:lab()};if(root==='about')return {active:'about',html:about()};return {active:'',html:home()}};
-    function bind(){bindFilms();
+    function about(){return `<main class="page">${innerIntro('','','关于','')}<div class="wrap"><section class="about-block about-refined"><div class="about-side"><div class="about-avatar-frame"><svg class="about-avatar-illustration" viewBox="0 0 500 500" role="img" aria-label="光头Qqiang 极简手绘头像，两颗黑色圆点眼睛和米白色椭圆脸庞">
+    <path d="M251 69 C346 69 403 147 401 234 C401 328 347 431 248 431 C140 431 101 350 101 265 C99 155 147 69 251 69 Z" fill="#fffcf2" stroke="#142a3a" stroke-width="18" stroke-linejoin="round"/>
+    <circle cx="195" cy="218" r="13" fill="#142a3a"/><circle cx="310" cy="234" r="13" fill="#142a3a"/>
+  </svg></div><h2 class="about-big">让想法，<br>真正发生。</h2></div><div class="about-body"><p>我是光头Qqiang，一名独立创造者。过去，我习惯从产品的角度观察问题、整理需求和设计体验；现在借助 AI Coding，我也能把脑海里的想法一步步做成真正可以运行、可以使用的软件。</p><p>我喜欢做小而有用的工具，也喜欢那些让数字生活变得轻松一点的体验。做页截，是想让截图和标注更顺手；做译见，是希望翻译只在需要时出现；做页泊，则是想让越来越多的浏览器标签重新变得有序。</p><p>对我来说，完成一个功能不是终点。我更在意它有没有解决真实的问题、第一次使用是否清楚、一次操作是否足够自然。我会不断试用、修改和删减，直到这些细节能够彼此协调。</p><p>这里存放我做出来的作品，也记录从想法到产品的过程。如果你也喜欢设计、创造，或只是想把一个点子变成现实，欢迎一起交流。</p><div class="about-links"><a class="text-link" href="#/works">看看作品 <span aria-hidden="true">↗</span></a><a class="text-link" href="https://github.com/Qqiang2738" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></div></div></section></div></main>`}
+    const routes=()=>{const bits=(location.hash||'#/').slice(2).split('/').filter(Boolean);const root=bits[0]||'';if(root==='works')return {active:'works',html:works()};if(root==='work'){const p=projects.find(x=>x.slug===bits[1]);return {active:'works',html:p?casePage(p):works()}}if(root==='journal'&&bits[1]){const e=entries.find(x=>x.slug===bits[1])||entries[0];return {active:'journal',html:article(e)}}if(root==='journal')return {active:'journal',html:journal()};if(root==='about')return {active:'about',html:about()};return {active:'',html:home()}};
+    function bind(){bindFilms();bindPageShotVideo();
       const gallery=document.querySelector('[data-gallery]');
       if(gallery){
         const pictures=workGalleries[gallery.dataset.gallery]||[];
@@ -875,9 +1134,8 @@ a:focus-visible,button:focus-visible{outline:2px solid #617a62;outline-offset:5p
       }));}
 document.querySelector('[data-to-top]')?.addEventListener('click',()=>{window.scrollTo({top:0,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});});
       document.querySelector('[data-scroll-works]')?.addEventListener('click',(e)=>{const target=document.getElementById('selected-work');if(target){e.preventDefault();target.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'})}});const menu=document.getElementById('menu-toggle');menu?.addEventListener('click',()=>{const existing=document.getElementById('mobile-nav');if(existing){existing.remove();menu.setAttribute('aria-expanded','false');menu.innerHTML='菜单 <span aria-hidden="true">☰</span>';return}const pane=document.createElement('nav');pane.id='mobile-nav';pane.className='mobile-nav';pane.setAttribute('aria-label','移动端导航');pane.innerHTML=navItems.map(([cn,key])=>`<a href="${link(key)}">${cn}</a>`).join('');document.querySelector('.site-head').appendChild(pane);menu.setAttribute('aria-expanded','true');menu.innerHTML='关闭 <span aria-hidden="true">×</span>'});
-      document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-filter]').forEach(x=>{x.classList.toggle('active',x===b);x.setAttribute('aria-pressed',String(x===b))});document.getElementById('works-list').innerHTML=workRows(b.dataset.filter)}));
       const reveals=document.querySelectorAll('.fade-in');if('IntersectionObserver' in window&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){const io=new IntersectionObserver((entries)=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.10,rootMargin:'0px 0px -30px 0px'});reveals.forEach(el=>io.observe(el))}else{reveals.forEach(el=>el.classList.add('visible'))}}
-    function render(){const route=routes();document.getElementById('app').innerHTML=header(route.active)+route.html+footer();document.title=(route.active?({works:'作品',lab:'实验室',journal:'创作手记',about:'关于'}[route.active]+' · '):'')+'光头Qqiang · qqiang.com';bind();window.scrollTo({top:0,behavior:'instant'})}
+    function render(){const route=routes();document.getElementById('app').innerHTML=header(route.active)+route.html+footer();document.title=(route.active?({works:'作品',journal:'创作手记',about:'关于'}[route.active]+' · '):'')+'光头Qqiang · qqiang.com';bind();window.scrollTo({top:0,behavior:'instant'})}
     window.addEventListener('hashchange',render);render();
   })();
   
