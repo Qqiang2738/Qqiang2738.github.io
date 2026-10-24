@@ -3,7 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>光头Qqiang — 中小企业工作流数字化</title>
+    <title>光头Qqiang — 让复杂的工作，变简单</title>
+    <meta name="description" content="光头Qqiang 专注中小企业工作流优化与数字化落地。深入业务现场，梳理流程、减少无效沟通，让简单好用的系统融入日常工作。">
+    <meta name="theme-color" content="#F4F3EE">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=216">
+    <link rel="canonical" href="https://qqiang.com/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="光头Qqiang · 让复杂的工作，变简单">
+    <meta property="og:description" content="为中小企业理顺业务流程，让工作流数字化真正落地。">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:url" content="https://qqiang.com/">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500&family=Noto+Serif+SC:wght@500;600&display=swap" rel="stylesheet">
@@ -180,7 +190,7 @@
             color: var(--ink-100);
         }
 
-        /* 首屏下方：「一弦三珠」全自动呼吸演示 */
+        /* 首屏：左侧交错的线条持续轻微流动，中段自然收束，右侧保持直线。 */
         .untangle-stage {
             padding: 12px 0;
             user-select: none;
@@ -188,10 +198,17 @@
         }
 
         .wave-svg {
-            width: 100%;
-            height: 72px;
             display: block;
-            overflow: visible;
+            width: 100%;
+            height: clamp(82px, 10vw, 106px);
+            overflow: hidden;
+        }
+
+        .flow-thread, .flow-order-line {
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            vector-effect: non-scaling-stroke;
         }
 
         /* 3. 章节通用结构：上下错落样式 + 品牌绿汉字序数 */
@@ -531,6 +548,265 @@
             .chapter-meta { position: static; }
             .dossier-card, .letter-card { padding: 36px 24px; }
         }
+
+        /* V-next preview: preserve brand, refine the information hierarchy */
+        .prologue-title {
+            font-size: clamp(38px, 5vw, 52px);
+            line-height: 1.47;
+            letter-spacing: -0.025em;
+            margin-bottom: 22px;
+            max-width: none;
+        }
+        .prologue-lead {
+            font-family: var(--font-display);
+            font-size: clamp(18px, 2vw, 21px);
+            font-weight: 500;
+            line-height: 1.8;
+            max-width: 720px;
+            color: var(--ink-60);
+            margin-bottom: 48px;
+        }
+        .prologue-body { margin-bottom: 64px; }
+        .prologue-body p { max-width: 32em; }
+        .prologue-cta { margin-top: 21px; font-size: 15px; }
+        .prologue-cta span { margin-left: 3px; transition: transform 220ms ease; display: inline-block; }
+        .prologue-cta:hover span { transform: translate(2px,-2px); }
+        .notes-list { gap: 45px; }
+        .note-entry { max-width: 570px; }
+        .note-prose { max-width: 38em; }
+
+        /* Example replaces unverifiable case metrics with an autonomous workflow storyboard. */
+        .workflow-card { padding: 44px 42px 38px; }
+        .workflow-card .dossier-header { margin-bottom: 29px; }
+        .workflow-title { font-family: var(--font-display); font-size: clamp(24px, 2.9vw, 31px); font-weight: 600; color: #fff; letter-spacing: -0.012em; line-height: 1.52; }
+        .workflow-intro { font-size: 15px; color: rgba(244,243,238,.73); line-height: 1.85; margin-top: 15px; max-width: 30em; }
+        .flow-window { margin-top: 39px; background: #F5F4EE; border-radius: 6px; color: #183826; overflow: hidden; padding: 0 22px 21px; box-shadow: 0 14px 30px rgba(0,0,0,.12); }
+        .flow-window-top { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; border-bottom: 1px solid rgba(24,56,38,.1); gap: 10px; }
+        .flow-window-brand { font-size: 13px; display: flex; align-items: center; gap: 8px; font-weight: 600; }
+        .flow-live-dot { width: 6px; height: 6px; background: #247A43; border-radius: 50%; }
+
+        .flow-track { display: flex; position: relative; align-items: flex-start; justify-content: space-between; margin: 26px 8px 22px; }
+        .flow-track-rule, .flow-track-fill { position: absolute; top: 13px; left: 12.5%; width: 75%; height: 1px; background: rgba(24,56,38,.16); }
+        .flow-track-fill { background: #247A43; width: 0; z-index: 1; transition: width 500ms cubic-bezier(.2,.8,.2,1); }
+        .flow-stop { display: flex; align-items: center; flex-direction: column; position: relative; z-index: 2; width: 25%; gap: 8px; color: #818B83; transition: color 350ms ease; }
+        .flow-marker { display: grid; place-items: center; width: 27px; height: 27px; border: 1px solid #CAD0C8; background: #F5F4EE; border-radius: 50%; transition: background 350ms ease, border-color 350ms ease, transform 350ms ease, color 350ms ease; color: #B2BBB1; }
+        .flow-marker svg { width: 14px; height: 14px; opacity: 0; transition: opacity 300ms; }
+        .flow-stop-label { font-size: 12px; letter-spacing: -.015em; white-space: nowrap; }
+        .flow-stop.is-active,.flow-stop.is-done { color: #183826; }
+        .flow-stop.is-active .flow-marker { background: #E4EDE1; color: #247A43; border-color: #247A43; transform: scale(1.08); box-shadow: 0 0 0 4px rgba(36,122,67,.07); }
+        .flow-stop.is-done .flow-marker { background: #247A43; border-color: #247A43; color: white; }
+        .flow-stop.is-done svg { opacity: 1; }
+        .flow-stop.is-warning .flow-marker { background: #F3E7D2; border-color: #A47A39; color: #9B6B23; }
+        .flow-event { border: 1px solid #E0E4DB; border-radius: 5px; padding: 15px 14px; display: flex; align-items: center; gap: 13px; min-height: 102px; background: #fff; transition: border-color 300ms ease; }
+        .flow-event.is-warning { border-color: #D9BA85; }
+        .flow-event-symbol { display: grid; place-items: center; width: 35px; height: 35px; border-radius: 50%; background: #E3EEE4; color: #247A43; font-family: var(--font-body); font-size: 18px; font-weight: 600; flex: 0 0 auto; transition: background 250ms, color 250ms; }
+        .flow-event.is-warning .flow-event-symbol { background: #F6EBD7; color: #9B6B23; }
+        .flow-event-copy { display: flex; flex-direction: column; min-width: 0; gap: 2px; }
+        .flow-event-top { color: #78867A; font-size: 11px; letter-spacing: .035em; line-height: 1.5; }
+        .flow-event-copy strong { font-size: 15px; font-weight: 600; line-height: 1.5; color: #183826; }
+        .flow-event-copy>span:last-child { font-size: 12px; color: #69786D; line-height: 1.55; }
+        .workflow-result { margin-top: 32px; gap: 28px; font-size: 14px; line-height: 1.8; }
+        .workflow-result strong { font-size: 15px; margin-bottom: 7px; }
+
+        .letter-cell[type=button] { border: 0; outline: 0; background: transparent; font: inherit; text-align: left; width: 100%; padding: 0; }
+        .letter-cell[type=button]:focus-visible,.letter-cell:focus-visible { outline: 2px solid var(--signal-green); outline-offset: 6px; border-radius: 2px; }
+        @media(max-width: 820px) {
+          .prologue-title { font-size: clamp(34px, 7vw, 44px); margin-bottom: 20px; }
+          .prologue-lead { margin-bottom: 35px; font-size: 18px; }
+          .prologue-body { margin-bottom: 52px; }
+          .workflow-card { padding: 34px 24px 30px; }
+          .workflow-result { gap: 22px; }
+        }
+        @media(max-width: 480px) {
+          header { padding-top: 30px; padding-bottom: 57px; }
+          .canvas { padding: 0 23px; }
+          .prologue-title { font-size: 34px; line-height: 1.55; }
+          .prologue-lead { font-size: 17px; }
+          .prologue-body { gap: 20px; }
+          .chapter { gap: 30px; }
+          .workflow-card { padding: 27px 18px 26px; }
+          .workflow-card .dossier-header { font-size: 11px; flex-wrap: wrap; gap: 5px; }
+          .workflow-title { font-size: 24px; }
+          .workflow-intro { font-size: 14px; }
+          .flow-window { padding: 0 11px 12px; margin-top: 27px; }
+          .flow-track { margin: 24px 0 22px; }
+          .flow-stop-label { font-size: 10px; letter-spacing: -.04em; }
+          .flow-marker { width: 24px; height: 24px; }
+          .flow-track-rule,.flow-track-fill { top: 12px; }
+          .flow-event { gap: 10px; padding: 12px 10px; min-height: 109px; }
+          .flow-event-symbol { width: 30px; height: 30px; font-size: 16px; }
+          .flow-event-copy strong { font-size: 13px; }
+          .flow-event-copy>span:last-child { font-size: 11px; }
+          .workflow-result { font-size: 13px; }
+          .workflow-result strong { font-size: 14px; }
+
+          .letter-grid { gap: 24px; }
+          footer { flex-wrap: wrap; gap: 10px; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          html { scroll-behavior: auto; }
+          *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+        }
+
+
+        /* V2.1 · 文字与阅读体验精修。
+           保留已确认的品牌气质、页面结构、业务动效与内容；
+           只调节中文字形、字号层级、阅读行距和明暗对比。 */
+        :root {
+            --ink-100: #151A17;
+            --ink-80: #303B34;
+            --ink-60: #4B574F;
+            --ink-40: #59685F;
+            --signal-green: #216A3E;
+            --font-display: "Noto Serif SC", "Noto Serif CJK SC", "Songti SC", "STSong", serif;
+            --font-body: "Inter", "Noto Sans SC", "Noto Sans CJK SC", "PingFang SC", -apple-system, BlinkMacSystemFont, sans-serif;
+            --size-body: 17px;
+            --size-title: 22px;
+            --size-meta: 14px;
+        }
+        html {
+            line-height: 1.83;
+            font-weight: 400;
+            font-synthesis: none;
+        }
+        .brand-name { font-size: 19px; letter-spacing: 0; }
+        .brand-domain { font-size: 14px; line-height: 1.45; }
+
+        /* 首屏：明确标题 > 核心说明 > 深入介绍的阅读顺序。 */
+        .prologue-title {
+            font-size: clamp(40px, 4.4vw, 52px);
+            line-height: 1.46;
+            letter-spacing: -0.018em;
+            font-weight: 600;
+            margin-bottom: 27px;
+        }
+        .prologue-lead {
+            font-family: var(--font-body);
+            font-size: clamp(19px, 1.65vw, 20px);
+            line-height: 1.85;
+            font-weight: 400;
+            max-width: 35em;
+            color: var(--ink-60);
+            margin-bottom: 51px;
+            letter-spacing: 0.006em;
+        }
+        .prologue-body {
+            font-size: 17px;
+            line-height: 1.98;
+            color: var(--ink-80);
+            gap: 66px;
+            margin-bottom: 59px;
+        }
+        .prologue-body p { max-width: 33em; }
+        .prologue-cta {
+            color: var(--signal-green);
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.6;
+            margin-top: 22px;
+            text-underline-offset: 5px;
+        }
+        .prologue-cta:focus-visible { outline: 2px solid currentColor; outline-offset: 5px; border-radius: 2px; }
+
+        /* 章节编号是点缀，不让它比章节名称更抢眼。 */
+        .chapter-num { font-size: 23px; color: var(--signal-green); }
+        .chapter-name { font-size: 19px; letter-spacing: 0.02em; line-height: 1.5; }
+        .note-title { font-size: 22px; line-height: 1.55; letter-spacing: -0.006em; margin-bottom: 13px; }
+        .note-prose { font-size: 17px; line-height: 2.0; color: var(--ink-80); max-width: 34em; }
+
+        /* 深绿业务卡：提高辅助文字亮度，保持温润而非刺白。 */
+        .workflow-card .dossier-header {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #D4E3D7;
+            border-bottom-color: rgba(244,243,238,.24);
+            margin-bottom: 32px;
+        }
+        .workflow-title {
+            font-size: clamp(27px, 2.55vw, 31px);
+            line-height: 1.57;
+            letter-spacing: -0.007em;
+        }
+        .workflow-intro {
+            color: #D9E6DA;
+            font-size: 16px;
+            line-height: 1.94;
+            max-width: 31em;
+            margin-top: 18px;
+        }
+        .flow-window { background: #F7F7F3; }
+        .flow-window-top { border-bottom-color: rgba(24,56,38,.15); }
+        .flow-window-brand { font-size: 14px; line-height: 1.5; }
+
+        .flow-stop { color: #607267; }
+        .flow-stop-label { font-size: 13px; line-height: 1.55; letter-spacing: 0; }
+        .flow-stop.is-active,.flow-stop.is-done { color: #183826; }
+        .flow-event { padding: 17px 16px; min-height: 112px; gap: 14px; }
+        .flow-event-top { color: #56695B; font-size: 13px; line-height: 1.5; letter-spacing: .01em; }
+        .flow-event-copy { gap: 4px; }
+        .flow-event-copy strong { font-size: 17px; line-height: 1.52; }
+        .flow-event-copy>span:last-child { font-size: 14px; color: #4C5D52; line-height: 1.65; }
+        .workflow-result { font-size: 16px; line-height: 1.92; gap: 32px; color: #E4EEE5; }
+        .workflow-result strong { font-size: 17px; color: #FFFFFF; margin-bottom: 11px; }
+
+        /* 合作方式、联系方式与页脚：取消浅灰小字造成的费力阅读。 */
+        .timeline-step h3 { font-size: 22px; line-height: 1.55; margin-bottom: 12px; }
+        .timeline-step p { font-size: 17px; line-height: 1.98; }
+        .letter-headline { font-size: clamp(22px, 2.15vw, 26px); line-height: 1.7; }
+        .cell-label { font-size: 14px; line-height: 1.5; }
+        .cell-value { font-size: 18px; line-height: 1.55; }
+        .letter-cell .cell-value[style] { font-size: 17px !important; }
+        .copy-toast { font-size: 13px; color: var(--signal-green); }
+        footer { font-size: 14px; line-height: 1.5; }
+
+        /* 大中屏：不要让单栏重心偏窄。 */
+        @media (min-width: 821px) {
+            .workflow-card { padding: 45px 43px 40px; }
+            .workflow-card .flow-window { margin-top: 39px; }
+        }
+        @media (max-width: 820px) {
+            .prologue-title { font-size: clamp(37px, 5.7vw, 46px); margin-bottom: 24px; }
+            .prologue-lead { font-size: 19px; margin-bottom: 38px; max-width: 35em; }
+            .prologue-body { font-size: 17px; line-height: 1.92; gap: 25px; margin-bottom: 56px; }
+            .chapter-name { font-size: 19px; }
+            .workflow-result { font-size: 16px; line-height: 1.9; }
+            .workflow-result strong { font-size: 17px; }
+            .letter-headline { font-size: 23px; }
+        }
+        @media (max-width: 480px) {
+            .brand-name { font-size: 18px; }
+            .brand-domain { font-size: 13px; }
+            .prologue-title { font-size: 36px; line-height: 1.5; letter-spacing: -0.012em; margin-bottom: 22px; }
+            .prologue-lead { font-size: 17.5px; line-height: 1.82; margin-bottom: 33px; }
+            .prologue-body { font-size: 16.5px; line-height: 1.92; gap: 24px; margin-bottom: 51px; }
+            .prologue-cta { font-size: 16px; }
+            .chapter-num { font-size: 22px; }
+            .chapter-name { font-size: 18px; }
+            .note-title { font-size: 20px; line-height: 1.55; margin-bottom: 12px; }
+            .note-prose { font-size: 16.5px; line-height: 1.95; }
+            .workflow-card .dossier-header { font-size: 13px; line-height: 1.55; }
+            .workflow-title { font-size: 25px; line-height: 1.55; }
+            .workflow-intro { font-size: 15.5px; line-height: 1.83; }
+            .flow-window { padding: 0 12px 14px; }
+            .flow-window-brand { font-size: 13.5px; }
+
+            .flow-stop-label { font-size: 12px; }
+            .flow-track { margin: 24px 0 24px; }
+            .flow-event { min-height: 115px; padding: 13px 11px; gap: 11px; }
+            .flow-event-top { font-size: 12px; }
+            .flow-event-copy strong { font-size: 15px; line-height: 1.45; }
+            .flow-event-copy>span:last-child { font-size: 12.5px; line-height: 1.5; }
+            .workflow-result { font-size: 15.5px; line-height: 1.87; gap: 24px; }
+            .workflow-result strong { font-size: 16px; margin-bottom: 8px; }
+
+            .timeline-step h3 { font-size: 20px; line-height: 1.55; }
+            .timeline-step p { font-size: 16.5px; line-height: 1.93; }
+            .letter-headline { font-size: 22px; line-height: 1.65; }
+            .cell-label { font-size: 14px; }
+            .cell-value { font-size: 17px; }
+            .letter-cell .cell-value[style] { font-size: 16.5px !important; }
+            footer { font-size: 13px; }
+        }
     </style>
 </head>
 <body>
@@ -556,37 +832,43 @@
 
         <!-- 2. 首屏序言 -->
         <section class="prologue">
-            <h1 class="prologue-title">
-                混乱的流程，每天都在消耗团队的精力。<span>我帮中小传统企业建立顺畅的数字化工作流，减少无效沟通与责任推诿，让问题在五分钟内看清，让员工开开心心把活干好。</span>
-            </h1>
+            <h1 class="prologue-title">让复杂的工作，<br>变简单。</h1>
+            <p class="prologue-lead">帮助中小企业理顺业务流程，减少重复劳动与无效沟通，让数字化真正融入每天的工作。</p>
 
             <div class="prologue-body">
-                <p>
-                    走进很多传统企业，我看到最大的痛点往往不是缺技术，而是内部沟通太累。几十个微信群天天刷屏，同一份数据在销售、生产与财务的表格里反复抄写。一旦订单延期，大家都在忙着找人、对账、互相推卸责任。
-                </p>
+                <p>企业里最消耗精力的，往往不是难题本身，而是重复填表、反复追问进度，以及出了问题不知道该找谁。一个订单走到哪一步，不应该靠翻聊天记录才能知道。</p>
                 <div>
-                    <p>
-                        我不推销复杂难用的传统软件。作为独立顾问，我深入你的业务现场，帮你砍掉多余的审批环节，量身定制一套简单、顺手的工作流系统。好系统的标准只有一个：员工愿意天天用，老板管理更省心。
-                    </p>
-                    <a href="#contact" class="prologue-cta">预约交谈 ↓</a>
+                    <p>我会先走进真实业务，把事情如何流转理清楚，再借助 AI 和软件搭建简单、顺手的工作流。让一线员工少折腾，让管理者看得清。</p>
+                    <a href="#contact" class="prologue-cta">聊聊你的业务 <span aria-hidden="true">↗</span></a>
                 </div>
             </div>
 
-            <!-- 首屏下方：「一弦三珠」全自动呼吸演示 -->
-            <div class="untangle-stage">
-                <svg class="wave-svg" viewBox="0 0 900 72" fill="none">
+            <!-- 左侧混乱路径持续轻微运动，右侧始终为稳定直线，流光自左向右。 -->
+            <div class="untangle-stage" aria-hidden="true">
+                <svg class="wave-svg" viewBox="0 0 900 112" preserveAspectRatio="none" fill="none">
                     <defs>
-                        <linearGradient id="pulse-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" stop-color="#247A43" stop-opacity="0"/>
-                            <stop offset="50%" stop-color="#247A43" stop-opacity="1"/>
-                            <stop offset="100%" stop-color="#247A43" stop-opacity="0"/>
+                        <!-- 透明两端，中段只有一束柔和的绿色光；随时间横向移动 -->
+                        <linearGradient id="order-glint" gradientUnits="userSpaceOnUse" x1="-220" y1="0" x2="-40" y2="0">
+                            <stop offset="0%" stop-color="#2EA463" stop-opacity="0"/>
+                            <stop offset="25%" stop-color="#2EA463" stop-opacity=".10"/>
+                            <stop offset="50%" stop-color="#299A57" stop-opacity=".88"/>
+                            <stop offset="75%" stop-color="#2EA463" stop-opacity=".10"/>
+                            <stop offset="100%" stop-color="#2EA463" stop-opacity="0"/>
                         </linearGradient>
                     </defs>
-                    <path id="entropy-path" d="M 0 36 L 900 36" stroke="#183826" stroke-width="1.4" fill="none"/>
-                    <line id="order-beam" x1="-160" y1="36" x2="0" y2="36" stroke="url(#pulse-grad)" stroke-width="2.2" opacity="0"/>
-                    <circle id="node-1" cx="225" cy="36" r="4" fill="#F4F3EE" stroke="#183826" stroke-width="1.5"/>
-                    <circle id="node-2" cx="450" cy="36" r="4" fill="#F4F3EE" stroke="#183826" stroke-width="1.5"/>
-                    <circle id="node-3" cx="675" cy="36" r="4" fill="#F4F3EE" stroke="#183826" stroke-width="1.5"/>
+                    <g id="flow-geometry">
+                        <path id="flow-thread-a" class="flow-thread" d="M 0 24 C 57 13, 92 99, 153 72 C 206 43, 242 18, 304 50 C 351 79, 407 36, 470 55 C 503 61, 543 56, 582 56" stroke="#7E9E88" stroke-width="1.8"/>
+<path id="flow-thread-b" class="flow-thread" d="M 0 55 C 48 93, 97 12, 157 35 C 206 59, 254 91, 312 60 C 370 31, 411 70, 470 55 C 509 51, 543 56, 582 56" stroke="#234B35" stroke-width="1.9"/>
+<path id="flow-thread-c" class="flow-thread" d="M 0 90 C 48 64, 105 78, 167 86 C 224 95, 255 36, 317 68 C 364 88, 418 45, 470 55 C 506 59, 545 56, 582 56" stroke="#A4BAAA" stroke-width="1.8"/>
+<path id="flow-order-line" class="flow-order-line" d="M 570 56 H 900" stroke="#234B35" stroke-width="1.9"/>
+                    </g>
+                    <!-- 高光路径与左侧动态曲线逐帧同步，右侧直线始终不动。 -->
+                    <g id="flow-glint" fill="none" stroke="url(#order-glint)" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" opacity=".85" pointer-events="none">
+                        <path d="M 0 24 C 57 13, 92 99, 153 72 C 206 43, 242 18, 304 50 C 351 79, 407 36, 470 55 C 503 61, 543 56, 582 56" />
+<path d="M 0 55 C 48 93, 97 12, 157 35 C 206 59, 254 91, 312 60 C 370 31, 411 70, 470 55 C 509 51, 543 56, 582 56" />
+<path d="M 0 90 C 48 64, 105 78, 167 86 C 224 95, 255 36, 317 68 C 364 88, 418 45, 470 55 C 506 59, 545 56, 582 56" />
+<path d="M 570 56 H 900" />
+                    </g>
                 </svg>
             </div>
         </section>
@@ -600,75 +882,60 @@
 
             <div class="notes-list">
                 <article class="note-entry">
-                    <h3 class="note-title">告别口头传话与互相推诿</h3>
-                    <p class="note-prose">
-                        传统企业里最耗时间的就是到处问进度。当交接只靠嘴说或群里喊话，出事一定互相甩锅。我把核心业务流程搬到线上，每笔订单当前在谁手里、卡了多久一目了然。不用老板天天催，出现延期系统会自动提醒。
-                    </p>
+                    <h3 class="note-title">让每件事都有清楚的去向</h3>
+                    <p class="note-prose">一笔订单由谁跟进、走到哪一步、为什么停住，都有迹可循。减少口头传话和反复催问，让协作不再依赖某个人记得多少。</p>
                 </article>
-
                 <article class="note-entry">
-                    <h3 class="note-title">拒绝重复填表与手工核对</h3>
-                    <p class="note-prose">
-                        让员工心累的往往不是工作本身，而是每天花大量时间把同样的数据抄进不同的表格。我帮你把销售、排产、仓库和财务的数据连起来，源头只录一次，后面的单据和报表自动生成，彻底告别加班核对表格。
-                    </p>
+                    <h3 class="note-title">让信息只需要认真录入一次</h3>
+                    <p class="note-prose">把销售、生产、仓库与财务之间需要共享的信息连接起来。减少重复填表和手工核对，让数据跟着业务自然流转。</p>
                 </article>
-
                 <article class="note-entry">
-                    <h3 class="note-title">简单好用，员工当天就能上手</h3>
-                    <p class="note-prose">
-                        很多企业买过昂贵的软件，最后却没人用，原因就是操作太复杂。我做的系统砍掉了一切走形式的填表，每个岗位打开只看自己当前要干的活，像用手机软件一样简单直观，员工不抵触，真正愿意日常使用。
-                    </p>
+                    <h3 class="note-title">让系统贴合人，而不是让人迁就系统</h3>
+                    <p class="note-prose">不堆功能，不增加无意义的操作。执行岗位看清下一步要做什么，管理岗位看见待决策的问题，让系统真正成为每天愿意使用的工具。</p>
                 </article>
             </div>
         </section>
 
-        <!-- 4. 贰 · 交付案例 -->
-        <section class="chapter">
+        <!-- 4. 贰 · 业务场景示例，不作为真实客户业绩 -->
+        <section class="chapter" id="workflow-sample">
             <div class="chapter-meta">
                 <span class="chapter-num">贰</span>
-                <h2 class="chapter-name">交付案例</h2>
+                <h2 class="chapter-name">业务场景</h2>
             </div>
 
-            <div class="dossier-card">
-                <svg class="dossier-watermark" viewBox="0 0 100 100">
-                    <ellipse cx="50" cy="51" rx="32" ry="41" fill="none" stroke="#FFFFFF" stroke-width="4" transform="rotate(6 50 51)"/>
-                    <circle cx="39" cy="46" r="4" fill="#FFFFFF"/>
-                    <circle cx="62" cy="49" r="4" fill="#FFFFFF"/>
-                </svg>
-
+            <div class="dossier-card workflow-card">
                 <div class="dossier-header">
-                    <span>客户案例</span>
-                    <span>某传统制造企业全流程改造</span>
+                    <span>从接单到交付</span>
+                    <span>制造企业 · 场景模拟</span>
+                </div>
+                <h3 class="workflow-title">一笔订单的进度，<br>不用再到处问。</h3>
+                <p class="workflow-intro">信息沿着业务向前走。每一次交接、每一个异常，都能找到状态和责任人。</p>
+
+                <div class="flow-window" id="flow-demo" aria-label="订单从商务确认、设计交接、生产异常到处理完成的自动流程示例">
+                    <div class="flow-window-top">
+                        <span class="flow-window-brand"><span class="flow-live-dot" aria-hidden="true"></span> 订单协作</span>
+                    </div>
+                    <div class="flow-track" aria-hidden="true">
+                        <div class="flow-track-rule"></div>
+                        <div class="flow-track-fill" id="flow-fill"></div>
+                        <div class="flow-stop" data-step="0"><span class="flow-marker"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 12 4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="flow-stop-label">商务确认</span></div>
+                        <div class="flow-stop" data-step="1"><span class="flow-marker"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 12 4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="flow-stop-label">设计交接</span></div>
+                        <div class="flow-stop" data-step="2"><span class="flow-marker"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 12 4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="flow-stop-label">生产执行</span></div>
+                        <div class="flow-stop" data-step="3"><span class="flow-marker"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 12 4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="flow-stop-label">处理完成</span></div>
+                    </div>
+                    <div class="flow-event" id="flow-event" role="status" aria-live="off">
+                        <div class="flow-event-symbol" id="flow-icon" aria-hidden="true">✓</div>
+                        <div class="flow-event-copy">
+                            <span class="flow-event-top" id="flow-eyebrow">业务动态 · 01 / 04</span>
+                            <strong id="flow-event-title">商务已确认订单</strong>
+                            <span id="flow-event-note">交付要求已记录，下一岗位可直接接手</span>
+                        </div>
+                    </div>
                 </div>
 
-                <blockquote class="dossier-quote">
-                    “以前每天早上进工厂，听到的都是销售和车间在为订单延期争执。这套工作流跑起来之后，群里安静了，但出货反而比以前快得多。”
-                </blockquote>
-
-                <div class="dossier-metrics">
-                    <div>
-                        <div class="d-stat-num">-70<span>%</span></div>
-                        <div class="d-stat-desc">减少跨部门催单与开会</div>
-                    </div>
-                    <div>
-                        <div class="d-stat-num">5<span>分钟</span></div>
-                        <div class="d-stat-desc">查清订单异常卡点耗时</div>
-                    </div>
-                    <div>
-                        <div class="d-stat-num">100<span>%</span></div>
-                        <div class="d-stat-desc">一线员工真实使用率</div>
-                    </div>
-                </div>
-
-                <div class="dossier-columns">
-                    <div>
-                        <strong>改造前的问题</strong>
-                        订单进度散落在几十个微信群和纸质单据上。信息严重滞后，经常要等到客户投诉延期，管理层才开始到处问情况，部门之间互相推卸责任。
-                    </div>
-                    <div>
-                        <strong>改造后的效果</strong>
-                        驻场两周理顺业务流程，砍掉近一半多余签字，量身搭建轻量好用的工作流系统。不用看厚重的操作手册，员工当天全部用起来，订单交付恢复稳定。
-                    </div>
+                <div class="dossier-columns workflow-result">
+                    <div><strong>原来的工作方式</strong>在聊天群里传话、发文件、追进度。出现异常时，管理者需要逐个询问才能拼出全貌。</div>
+                    <div><strong>希望建立的工作方式</strong>订单状态清楚，任务按流程交接；遇到异常，相关岗位能及时看见，并留下处理记录。</div>
                 </div>
             </div>
         </section>
@@ -689,7 +956,7 @@
                     <span class="step-node"></span>
                     <h3>深入现场，先帮流程做减法</h3>
                     <p>
-                        在动手做系统之前，我先去你的车间和办公室了解实际情况。听听一线员工平时哪里最费劲，看单据每天怎么流转，先把现有的繁琐流程砍掉一半，理出最顺畅的业务主线。
+                        先到业务现场了解实际情况：订单如何流转，信息在哪一段容易丢失，哪些审批和重复操作可以减少。先把问题理清楚，再决定需要做什么。
                     </p>
                 </article>
 
@@ -697,7 +964,7 @@
                     <span class="step-node"></span>
                     <h3>按实际业务量身定制</h3>
                     <p>
-                        不套用死板的现成软件模板。完全按照你们现有的业务叫法、生产逻辑和岗位分工，快速搭建一套真正贴合你们工作习惯的数字化工作流系统。
+                        从一条最影响效率的流程开始，不必一上来就改造整个企业。按照真实业务、岗位分工和使用场景，搭建足够简单、也足够可靠的工作流。
                     </p>
                 </article>
 
@@ -705,7 +972,7 @@
                     <span class="step-node"></span>
                     <h3>手把手辅导，确保真正落地</h3>
                     <p>
-                        系统上线只是完成了一半。我会带着一线员工一起度过磨合期，根据大家每天使用时的真实反馈随时微调，直到全员都用得顺手、成为日常习惯。
+                        上线只是开始。和实际使用系统的人一起发现问题、调整细节，逐步让新的工作方式真正融入日常，而不是交付一套没人愿意打开的软件。
                     </p>
                 </article>
             </div>
@@ -721,7 +988,7 @@
             <div class="letter-card">
                 <div class="letter-top">
                     <h3 class="letter-headline">
-                        如果你的企业正被低效流程拖慢脚步，不妨找我喝杯茶，先聊三十分钟。
+                        如果有一条流程总让团队反复折腾，我们可以先从这件事聊起。
                     </h3>
                     <svg class="letter-stamp" viewBox="0 0 100 100">
                         <ellipse cx="50" cy="51" rx="32" ry="41" fill="none" stroke="#183826" stroke-width="4" transform="rotate(6 50 51)"/>
@@ -731,13 +998,13 @@
                 </div>
 
                 <div class="letter-grid">
-                    <div class="letter-cell" id="wechat-trigger" title="点击复制微信号">
+                    <button type="button" class="letter-cell" id="wechat-trigger" title="复制微信号 Qqiang1206" aria-label="复制微信号 Qqiang1206">
                         <span class="cell-label">
                             <span>微信</span>
-                            <span class="copy-toast">已复制</span>
+                            <span class="copy-toast" aria-live="polite">已复制</span>
                         </span>
                         <span class="cell-value">Qqiang1206</span>
-                    </div>
+                    </button>
 
                     <a href="mailto:L@qqiang.com" class="letter-cell">
                         <span class="cell-label">邮件</span>
@@ -781,84 +1048,159 @@
             eyeR.setAttribute('cy', 49 + dy);
         });
 
-        /* 2. 首屏「一弦三珠」全自动平滑呼吸演示 */
-        const path = document.getElementById('entropy-path');
-        const beam = document.getElementById('order-beam');
-        const n1 = document.getElementById('node-1');
-        const n2 = document.getElementById('node-2');
-        const n3 = document.getElementById('node-3');
-
-        const cycleDuration = 6800;
-
-        function animateString(now) {
-            const p = (now % cycleDuration) / cycleDuration;
-            const t = now * 0.0028;
-
-            let amp = 0;
-            if (p < 0.42) {
-                amp = 1;
-            } else if (p < 0.56) {
-                const k = (p - 0.42) / 0.14;
-                amp = 0.5 * (1 + Math.cos(k * Math.PI));
-            } else if (p < 0.88) {
-                amp = 0;
-            } else {
-                const k = (p - 0.88) / 0.12;
-                amp = 0.5 * (1 - Math.cos(k * Math.PI));
-            }
-
-            const y1 = 36 + Math.sin(t * 1.3) * 16 * amp;
-            const y2 = 36 + Math.cos(t * 1.6) * 18 * amp;
-            const y3 = 36 + Math.sin(t * 1.9 + 1.2) * 15 * amp;
-
-            path.setAttribute(
-                'd',
-                `M 0 36 C 110 ${y1}, 160 ${y1}, 225 ${y1} C 305 ${y1}, 370 ${y2}, 450 ${y2} C 530 ${y2}, 595 ${y3}, 675 ${y3} C 755 ${y3}, 825 36, 900 36`
+        /* 2. 左乱右直：左侧三条曲线持续轻柔摆动，中段自然收束，右侧永远保持笔直。
+           高光轨迹始终与曲线吻合，并沿 x 方向从左向右扫过。 */
+        const untangleStage = document.querySelector('.untangle-stage');
+        const orderGlint = document.getElementById('order-glint');
+        const glowLayer = document.getElementById('flow-glint');
+        const motionReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (!motionReduced && untangleStage && orderGlint && glowLayer) {
+            const sweepCycle = 7600;
+            const sweepDuration = 5400;
+            const beamWidth = 195;
+            const dynamicLines = [
+                document.getElementById('flow-thread-a'),
+                document.getElementById('flow-thread-b'),
+                document.getElementById('flow-thread-c')
+            ];
+            const glowLines = [...glowLayer.querySelectorAll('path')].slice(0, 3);
+            // 保存原始贝塞尔坐标，避免每帧在上一次变形的基础上累计偏移。
+            const originalPoints = dynamicLines.map(path =>
+                (path.getAttribute('d').match(/-?\d+(?:\.\d+)?/g) || []).map(Number)
             );
+            let visible = false, lastFrame = null, elapsed = 0;
+            const lineObserver = new IntersectionObserver(entries => {
+                visible = entries[0].isIntersecting;
+                lastFrame = null;
+            }, { threshold: .05 });
+            lineObserver.observe(untangleStage);
 
-            n1.setAttribute('cy', y1);
-            n2.setAttribute('cy', y2);
-            n3.setAttribute('cy', y3);
-
-            if (p >= 0.56 && p <= 0.86) {
-                const bp = (p - 0.56) / 0.30;
-                const beamX = -100 + bp * 1040;
-                beam.setAttribute('x1', beamX - 90);
-                beam.setAttribute('x2', beamX + 90);
-                beam.setAttribute('opacity', Math.sin(bp * Math.PI));
-
-                [
-                    { el: n1, x: 225 },
-                    { el: n2, x: 450 },
-                    { el: n3, x: 675 }
-                ].forEach(item => {
-                    if (Math.abs(beamX - item.x) < 75) {
-                        item.el.setAttribute('fill', '#247A43');
-                        item.el.setAttribute('stroke', '#247A43');
-                    } else {
-                        item.el.setAttribute('fill', '#F4F3EE');
-                        item.el.setAttribute('stroke', '#183826');
-                    }
-                });
-            } else {
-                beam.setAttribute('opacity', 0);
-                [n1, n2, n3].forEach(el => {
-                    el.setAttribute('fill', '#F4F3EE');
-                    el.setAttribute('stroke', '#183826');
-                });
+            function animatedPath(points, index, time) {
+                const next = [...points];
+                for (let i = 1; i < next.length; i += 2) {
+                    const x = points[i - 1];
+                    // 左侧活动幅度明显；越靠近汇合处越小，进入右侧后为零。
+                    const fade = x <= 190 ? 1 : x < 490
+                        ? Math.pow((490 - x) / 300, 1.35) : 0;
+                    const slow = Math.sin(time * .00165 + index * 1.72 + x * .013) * 7.3;
+                    const drift = Math.sin(time * .00268 - index * 1.03 - x * .020) * 2.8;
+                    next[i] = (points[i] + fade * (slow + drift)).toFixed(2);
+                }
+                let d = `M ${next[0]} ${next[1]}`;
+                for (let i = 2; i < next.length; i += 6) {
+                    d += ` C ${next[i]} ${next[i+1]}, ${next[i+2]} ${next[i+3]}, ${next[i+4]} ${next[i+5]}`;
+                }
+                return d;
             }
 
-            requestAnimationFrame(animateString);
+            function animateFlow(timestamp) {
+                if (lastFrame !== null && visible && !document.hidden) {
+                    elapsed = (elapsed + Math.min(timestamp - lastFrame, 80)) % sweepCycle;
+                }
+                lastFrame = timestamp;
+                if (visible && !document.hidden) {
+                    // 混乱部分持续轻微流动；中部汇合点及右侧直线坐标保持稳定。
+                    originalPoints.forEach((points, index) => {
+                        const d = animatedPath(points, index, elapsed);
+                        dynamicLines[index].setAttribute('d', d);
+                        glowLines[index].setAttribute('d', d);
+                    });
+                    const pos = -beamWidth + (900 + beamWidth * 2)
+                        * Math.min(1, elapsed / sweepDuration);
+                    orderGlint.setAttribute('x1', pos.toFixed(1));
+                    orderGlint.setAttribute('x2', (pos + beamWidth).toFixed(1));
+                }
+                requestAnimationFrame(animateFlow);
+            }
+            requestAnimationFrame(animateFlow);
+        } else if (glowLayer) {
+            // 尊重减少动态效果偏好：保留左乱右直的静态对比。
+            glowLayer.style.display = 'none';
         }
 
-        requestAnimationFrame(animateString);
+        /* 3. 业务示意：仅在进入视野时自动播放，无需访客点击。 */
+        const flowDemo = document.getElementById('flow-demo');
+        const flowStops = [...document.querySelectorAll('.flow-stop')];
+        const flowFill = document.getElementById('flow-fill');
+        const flowEvent = document.getElementById('flow-event');
+        const flowIcon = document.getElementById('flow-icon');
+        const flowEyebrow = document.getElementById('flow-eyebrow');
+        const flowTitle = document.getElementById('flow-event-title');
+        const flowNote = document.getElementById('flow-event-note');
+        const flowStates = [
+            {at: 0,   title: '商务已确认订单', note: '交付要求已记录，下一岗位可直接接手', glyph: '✓'},
+            {at: 2400,title: '设计任务已交接', note: '任务与资料一并送达对应负责人', glyph: '↗'},
+            {at: 4800,title: '生产出现异常', note: '缺料风险被标记，相关责任人及时获知', glyph: '!', warn: true},
+            {at: 7700,title: '异常已处理，继续推进', note: '处理过程已记录，交付状态同步更新', glyph: '✓'}
+        ];
+        const flowCycle = 11900;
+        let flowElapsed = 0, flowLast = null, flowVisible = false, renderedFlowState = -1;
+        function renderFlow(index) {
+            if (index === renderedFlowState) return;
+            renderedFlowState = index;
+            const state = flowStates[index];
+            flowStops.forEach((stop, i) => {
+                stop.classList.toggle('is-active', i === index);
+                stop.classList.toggle('is-done', i < index);
+                stop.classList.toggle('is-warning', Boolean(state.warn && i === index));
+            });
+            flowFill.style.width = (index * 25) + '%';
+            flowEvent.classList.toggle('is-warning', Boolean(state.warn));
+            flowIcon.textContent = state.glyph;
+            flowEyebrow.textContent = '业务动态 · 0' + (index + 1) + ' / 04';
+            flowTitle.textContent = state.title;
+            flowNote.textContent = state.note;
+        }
+        function flowLoop(timestamp) {
+            if (flowLast !== null && flowVisible && !document.hidden) flowElapsed += Math.min(timestamp - flowLast, 80);
+            flowLast = timestamp;
+            if (flowVisible && !document.hidden) {
+                if (flowElapsed >= flowCycle) flowElapsed = 0;
+                let index = 0;
+                for (let i=flowStates.length-1;i>=0;i--) if (flowElapsed >= flowStates[i].at) { index=i; break; }
+                renderFlow(index);
+            }
+            requestAnimationFrame(flowLoop);
+        }
+        if (motionReduced) {
+            renderFlow(3);
+            flowStops[3].classList.add('is-done');
+            flowStops[3].classList.remove('is-active');
+            flowFill.style.width = '75%';
+        } else {
+            const observer = new IntersectionObserver(entries => {
+                flowVisible = entries[0].isIntersecting;
+                flowLast = null;
+            }, { threshold: .2 });
+            observer.observe(flowDemo);
+            requestAnimationFrame(flowLoop);
+        }
 
-        /* 3. 微信复制轻反馈 */
+        /* 4. 微信复制轻反馈 */
         const wechatTrigger = document.getElementById('wechat-trigger');
-        wechatTrigger.addEventListener('click', () => {
-            navigator.clipboard?.writeText('Qqiang1206');
+        wechatTrigger.addEventListener('click', async () => {
+            let success = false;
+            try {
+                if (navigator.clipboard && window.isSecureContext) {
+                    await navigator.clipboard.writeText('Qqiang1206');
+                    success = true;
+                }
+            } catch (_) { /* Fall through to legacy copy API. */ }
+            if (!success) {
+                const helper = document.createElement('textarea');
+                helper.value = 'Qqiang1206';
+                helper.style.position = 'fixed';
+                helper.style.opacity = '0';
+                document.body.appendChild(helper);
+                helper.select();
+                try { success = document.execCommand('copy'); } catch (_) {}
+                helper.remove();
+            }
+            const toast = wechatTrigger.querySelector('.copy-toast');
+            toast.textContent = success ? '已复制' : '请手动复制';
             wechatTrigger.classList.add('copied');
-            setTimeout(() => wechatTrigger.classList.remove('copied'), 1800);
+            clearTimeout(wechatTrigger.copyTimer);
+            wechatTrigger.copyTimer = setTimeout(() => wechatTrigger.classList.remove('copied'), 1800);
         });
     </script>
 </body>
